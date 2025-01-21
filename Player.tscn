@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgebkr13xxyp"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_1lh1s"]
+[ext_resource type="PackedScene" uid="uid://c8g2bicauc1pn" path="res://PlayerInteractor.tscn" id="2_2fyxx"]
+[ext_resource type="Texture2D" uid="uid://c3gjntumds13t" path="res://assets/icons/questionMark.png" id="3_s4lhw"]
+[ext_resource type="Texture2D" uid="uid://dy6ovvy6361x7" path="res://assets/icons/exclamationPoint.png" id="4_lba0b"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lm68q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_soa4p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdngv"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_1lh1s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_lm68q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_soa4p")
+
+[node name="PlayerInteractor" parent="." node_paths=PackedStringArray("player", "question_mark", "exclamation_point") instance=ExtResource("2_2fyxx")]
+player = NodePath("..")
+question_mark = NodePath("../QuestionMark")
+exclamation_point = NodePath("../ExclamationPoint")
+
+[node name="CollisionShape3D" parent="PlayerInteractor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 1, 1)
+shape = SubResource("BoxShape3D_kdngv")
+
+[node name="QuestionMark" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0876743, 0, -0.0171248, 0, 0.0893311, 0, 0.0171248, 0, -0.0876743, 0, 2.36573, 0)
+visible = false
+texture = ExtResource("3_s4lhw")
+
+[node name="ExclamationPoint" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0876743, 0, -0.0171248, 0, 0.0893311, 0, 0.0171248, 0, -0.0876743, 0, 2.36573, 0)
+visible = false
+texture = ExtResource("4_lba0b")
+
+[editable path="PlayerInteractor"]

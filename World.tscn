@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://noyo5w3mn81q"]
+
+[ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
+[ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="2_7n7d5"]
+[ext_resource type="PackedScene" uid="uid://gpvrf6s15ck6" path="res://InteractableBox.tscn" id="3_g4ava"]
+[ext_resource type="PackedScene" uid="uid://w2poqbieqg5b" path="res://InteractableCharacter.tscn" id="4_jg4bx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_47y1e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkvxn"]
+albedo_texture = ExtResource("1_3koha")
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lrk2b"]
+sky_top_color = Color(0.607797, 0.122464, 0.913977, 1)
+sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
+
+[sub_resource type="Sky" id="Sky_d2deg"]
+sky_material = SubResource("ProceduralSkyMaterial_lrk2b")
+
+[sub_resource type="Environment" id="Environment_1uf3a"]
+background_mode = 2
+sky = SubResource("Sky_d2deg")
+
+[node name="World" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.81613, -0.00111022, 0.0282449, 0.00868506, 0.999406, -0.000622662, -0.0278645, 8.25031e-05, 7.92266, 0, 0, 0)
+mesh = SubResource("PlaneMesh_47y1e")
+surface_material_override/0 = SubResource("StandardMaterial3D_fkvxn")
+
+[node name="Player" parent="." instance=ExtResource("2_7n7d5")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.693338, 0.384634, -0.609376, 0.0235037, 0.833116, 0.552599, 0.720229, -0.397461, 0.568591, -1.95557, 3.12472, 2.74761)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1uf3a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
+
+[node name="Box" parent="." instance=ExtResource("3_g4ava")]
+
+[node name="Character" parent="." instance=ExtResource("4_jg4bx")]

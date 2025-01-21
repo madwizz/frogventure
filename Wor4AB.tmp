@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://noyo5w3mn81q"]
+
+[ext_resource type="Texture2D" uid="uid://621yx0ooaqx4" path="res://addons/kenney_prototype_textures/orange/texture_02.png" id="1_yg7wy"]
+[ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="2_7n7d5"]
+[ext_resource type="Script" path="res://Player.gd" id="3_8644y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6i1o"]
+albedo_texture = ExtResource("1_yg7wy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_47y1e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lrk2b"]
+sky_top_color = Color(0.607797, 0.122464, 0.913977, 1)
+sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
+
+[sub_resource type="Sky" id="Sky_d2deg"]
+sky_material = SubResource("ProceduralSkyMaterial_lrk2b")
+
+[sub_resource type="Environment" id="Environment_1uf3a"]
+background_mode = 2
+sky = SubResource("Sky_d2deg")
+
+[node name="World" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.96175, 0, 0, 0, 1, 0, 0, 0, 4.96175, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k6i1o")
+mesh = SubResource("PlaneMesh_47y1e")
+
+[node name="Player" parent="." instance=ExtResource("2_7n7d5")]
+script = ExtResource("3_8644y")
+speed = null
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95001, 0.312219, 0, -0.312219, 0.95001, 0, 3.208, 5.34208)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1uf3a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
