@@ -14,6 +14,8 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_1lh1s")
+speed = null
+rotation_speed = null
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -33,10 +35,10 @@ transform = Transform3D(-0.0876743, 0, -0.0171248, 0, 0.0893311, 0, 0.0171248, 0
 visible = false
 texture = ExtResource("4_lba0b")
 
-[node name="WarningArea" type="Area3D" parent="."]
+[node name="WarningInteractionArea" type="Area3D" parent="."]
 transform = Transform3D(3.99344, 0, 0, 0, 1, 0, 0, 0, 3.98841, 0, 1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WarningArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WarningInteractionArea"]
 shape = SubResource("CylinderShape3D_u2jje")
 
 [node name="InteractionZone" type="Area3D" parent="."]
@@ -44,8 +46,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone"]
 shape = SubResource("BoxShape3D_ya0hp")
-
-[connection signal="area_entered" from="WarningArea" to="." method="_on_warning_interaction_area_area_entered"]
-[connection signal="area_exited" from="WarningArea" to="." method="_on_warning_interaction_area_area_exited"]
-[connection signal="area_entered" from="InteractionZone" to="." method="_on_interaction_zone_area_entered"]
-[connection signal="area_exited" from="InteractionZone" to="." method="_on_interaction_zone_area_exited"]

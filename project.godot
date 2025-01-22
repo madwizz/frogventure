@@ -19,6 +19,10 @@ config/icon="res://assets/icons/projectIcon.png"
 
 enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 
+[global_group]
+
+interactables=""
+
 [input]
 
 forward={

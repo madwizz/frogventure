@@ -3,6 +3,15 @@ extends CharacterBody3D
 @export var speed: float = 5.0
 @export var rotation_speed: float = 3.0
 
+@onready var questionIcon: Sprite3D = $QuestionIcon
+@onready var exclamationIcon: Sprite3D = $ExclamationIcon
+
+@onready var warningArea: Area3D = $WarningArea
+@onready var interactionZone: Area3D = $InteractionZone
+
+var isInWarningArea: bool = false
+var isInInteractionZone: bool = false
+
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("endSession"):
@@ -19,3 +28,34 @@ func _process(delta: float) -> void:
 	
 	velocity = dir
 	move_and_slide()
+
+func _updateIcons():
+	if isInInteractionZone:
+		exclamationIcon.visible = true
+		questionIcon.visible = false
+	elif isInWarningArea:
+		questionIcon.visible = true
+		exclamationIcon.visible = false
+	else:
+		questionIcon.visible = false
+		exclamationIcon.visible = false
+
+func _on_warning_interaction_area_area_entered(area):
+	if area.is_in_group("interactables"):
+		isInWarningArea = true
+		_updateIcons()
+
+func _on_warning_interaction_area_area_exited(area):
+	if area.is_in_group("interactables"):
+		isInWarningArea = false
+		_updateIcons()
+
+func _on_interaction_zone_area_entered(area):
+	if area.is_in_group("interactables"):
+		isInInteractionZone = true
+		_updateIcons()
+
+func _on_interaction_zone_area_exited(area):
+	if area.is_in_group("interactables"):
+		isInInteractionZone = false
+		_updateIcons()

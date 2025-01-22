@@ -1,13 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://gpvrf6s15ck6"]
-
-[ext_resource type="PackedScene" uid="uid://vma50d75jbru" path="res://Interactable.tscn" id="1_q78wm"]
+[gd_scene load_steps=3 format=3 uid="uid://gpvrf6s15ck6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tlpre"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i1wva"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_h3sgo"]
 
 [node name="Box" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89645, 0.938588, 0)
@@ -15,16 +11,7 @@ mesh = SubResource("BoxMesh_tlpre")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="Area3D" type="Area3D" parent="StaticBody3D" groups=["interactables"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_i1wva")
-
-[node name="Interactable" parent="." instance=ExtResource("1_q78wm")]
-
-[node name="CollisionShape3D" parent="Interactable" index="0"]
-shape = SubResource("BoxShape3D_h3sgo")
-
-[connection signal="focused" from="Interactable" to="Interactable" method="_on_focused"]
-[connection signal="interacted" from="Interactable" to="Interactable" method="_on_interacted"]
-[connection signal="unfocused" from="Interactable" to="Interactable" method="_on_unfocused"]
-
-[editable path="Interactable"]
