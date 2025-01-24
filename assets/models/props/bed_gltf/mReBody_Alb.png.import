@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6hj5vp7c4as2"
-path.s3tc="res://.godot/imported/texture_13.png-51cb3f38ea774c85cb3ad561d20c5b53.s3tc.ctex"
+uid="uid://b1xhgo1ysbweh"
+path.s3tc="res://.godot/imported/mReBody_Alb.png-5d984b6a904fc06dbff19dce981c1716.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/dark/texture_13.png"
-dest_files=["res://.godot/imported/texture_13.png-51cb3f38ea774c85cb3ad561d20c5b53.s3tc.ctex"]
+source_file="res://assets/models/props/bed_gltf/mReBody_Alb.png"
+dest_files=["res://.godot/imported/mReBody_Alb.png-5d984b6a904fc06dbff19dce981c1716.s3tc.ctex"]
 
 [params]
 

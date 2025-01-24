@@ -16,3 +16,5 @@ shape = SubResource("BoxShape3D_fdteg")
 
 [node name="turntable" parent="Model" index="1" instance=ExtResource("2_i5w3x")]
 transform = Transform3D(0.171286, 0, 0, 0, 0.171286, 0, 0, 0, 0.171286, 0, -0.461862, 0.0817807)
+
+[editable path="Model/turntable"]

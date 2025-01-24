@@ -1,19 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://noyo5w3mn81q"]
+[gd_scene load_steps=16 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="2_7n7d5"]
-[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="4_qd727"]
+[ext_resource type="Texture2D" uid="uid://d1ycujafxw825" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="2_lghue"]
+[ext_resource type="Texture2D" uid="uid://cr4meoh8hbttl" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="3_c8wud"]
 [ext_resource type="PackedScene" uid="uid://p8vq37a1pv62" path="res://Box.tscn" id="4_vls01"]
-[ext_resource type="PackedScene" uid="uid://bpnikvw2m1ft" path="res://Prism.tscn" id="5_1keij"]
+[ext_resource type="Script" path="res://CameraTrigger.gd" id="5_g36pe"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_47y1e"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_rstw0"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkvxn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dq8k"]
 albedo_texture = ExtResource("1_3koha")
-uv1_triplanar = true
-uv1_world_triplanar = true
-uv2_triplanar = true
-uv2_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1gn6"]
+albedo_texture = ExtResource("2_lghue")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyxlp"]
+albedo_texture = ExtResource("3_c8wud")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lrk2b"]
 sky_top_color = Color(0.607797, 0.122464, 0.913977, 1)
@@ -26,18 +29,36 @@ sky_material = SubResource("ProceduralSkyMaterial_lrk2b")
 background_mode = 2
 sky = SubResource("Sky_d2deg")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_umwvo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_umrnj"]
+
 [node name="World" type="Node3D"]
 
-[node name="Ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.81613, -0.00111022, 0.0282449, 0.00868506, 0.999406, -0.000622662, -0.0278645, 8.25031e-05, 7.92266, 0, 0, 0)
-mesh = SubResource("PlaneMesh_47y1e")
-surface_material_override/0 = SubResource("StandardMaterial3D_fkvxn")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 4)
+mesh = SubResource("PlaneMesh_rstw0")
+surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 12)
+mesh = SubResource("PlaneMesh_rstw0")
+surface_material_override/0 = SubResource("StandardMaterial3D_4dq8k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0, 4)
+material_override = SubResource("StandardMaterial3D_r1gn6")
+mesh = SubResource("PlaneMesh_rstw0")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 12)
+material_override = SubResource("StandardMaterial3D_r1gn6")
+mesh = SubResource("PlaneMesh_rstw0")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
 [node name="Player" parent="." instance=ExtResource("2_7n7d5")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3, 0, 2)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.723835, 0.553182, -0.412374, 0.0225375, 0.578392, 0.815448, 0.689605, -0.599544, 0.406193, -3.4844, 6.12472, 2.74761)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1uf3a")
@@ -46,11 +67,59 @@ environment = SubResource("Environment_1uf3a")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
-[node name="Box" parent="." instance=ExtResource("4_vls01")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -3)
+[node name="Camera1" type="Camera3D" parent="."]
+transform = Transform3D(0.658059, 0, 0.752966, 0, 1, 0, -0.752966, 0, 0.658059, 0.348246, 2, 8)
 
-[node name="Cylinder" parent="." instance=ExtResource("4_qd727")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3)
+[node name="CameraArea1" type="Area3D" parent="Camera1"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_g36pe")
 
-[node name="Prop" parent="." instance=ExtResource("5_1keij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera1/CameraArea1"]
+shape = SubResource("BoxShape3D_umwvo")
+
+[node name="Camera2" type="Camera3D" parent="."]
+transform = Transform3D(0.752967, 0, -0.658059, 0, 1, 0, 0.658059, 0, 0.752967, 0.348246, 2, 8)
+
+[node name="CameraArea2" type="Area3D" parent="Camera2"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_g36pe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera2/CameraArea2"]
+shape = SubResource("BoxShape3D_umwvo")
+
+[node name="Camera3" type="Camera3D" parent="."]
+transform = Transform3D(-0.658059, 0, -0.752966, 0, 1, 0, 0.752966, 0, -0.658059, 0.348246, 2, 8)
+
+[node name="CameraArea3" type="Area3D" parent="Camera3"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_g36pe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3/CameraArea3"]
+shape = SubResource("BoxShape3D_umwvo")
+
+[node name="Camera4" type="Camera3D" parent="."]
+transform = Transform3D(-0.752966, 0, 0.658059, 0, 1, 0, -0.658059, 0, -0.752966, 0.348246, 2, 8)
+
+[node name="CameraArea4" type="Area3D" parent="Camera4"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_g36pe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera4/CameraArea4"]
+shape = SubResource("BoxShape3D_umwvo")
+
+[node name="Turntable" parent="." instance=ExtResource("4_vls01")]
+transform = Transform3D(-0.683439, 0, -0.730007, 0, 1, 0, 0.730007, 0, -0.683439, 5.25598, 0.945446, 12.7234)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.888471, 0, -0.949009, 0, 1.3, 0, 0.949009, 0, -0.888471, 5.27521, -0.186153, 12.7508)
+mesh = SubResource("BoxMesh_umrnj")
+skeleton = NodePath("../Turntable")
+
+[connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="Camera2/CameraArea2" to="Camera2/CameraArea2" method="enterTrigger"]
+[connection signal="body_exited" from="Camera2/CameraArea2" to="Camera2/CameraArea2" method="exitTrigger"]
+[connection signal="body_entered" from="Camera3/CameraArea3" to="Camera3/CameraArea3" method="enterTrigger"]
+[connection signal="body_exited" from="Camera3/CameraArea3" to="Camera3/CameraArea3" method="exitTrigger"]
+[connection signal="body_entered" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="enterTrigger"]
+[connection signal="body_exited" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="exitTrigger"]
