@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpnikvw2m1ft"]
+
+[ext_resource type="PackedScene" uid="uid://eptuo3heb4ef" path="res://Prop.tscn" id="1_wa2sa"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_kwe4i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntfs3"]
+
+[node name="Prop" instance=ExtResource("1_wa2sa")]
+message = "this is a prism"
+
+[node name="Model" parent="." index="0"]
+mesh = SubResource("PrismMesh_kwe4i")
+
+[node name="CollisionShape" parent="Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_ntfs3")

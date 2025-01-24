@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://p8vq37a1pv62"]
+
+[ext_resource type="PackedScene" uid="uid://eptuo3heb4ef" path="res://Prop.tscn" id="1_duayc"]
+[ext_resource type="PackedScene" uid="uid://7yrflh1d8y0j" path="res://assets/models/props/turntable_gltf/turntable.gltf" id="2_i5w3x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdteg"]
+
+[node name="Turntable" instance=ExtResource("1_duayc")]
+message = "this is a turntable"
+
+[node name="Model" parent="." index="0"]
+mesh = null
+
+[node name="CollisionShape" parent="Model/InteractArea" index="0"]
+shape = SubResource("BoxShape3D_fdteg")
+
+[node name="turntable" parent="Model" index="1" instance=ExtResource("2_i5w3x")]
+transform = Transform3D(0.171286, 0, 0, 0, 0.171286, 0, 0, 0, 0.171286, 0, -0.461862, 0.0817807)

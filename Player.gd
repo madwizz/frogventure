@@ -9,8 +9,14 @@ extends CharacterBody3D
 @onready var warningArea: Area3D = $WarningArea
 @onready var interactionZone: Area3D = $InteractionZone
 
+@onready var ui: CanvasLayer = $UI
+@onready var dialogBox: PanelContainer = $UI/DialogBox
+@onready var label: Label = $UI/DialogBox/Label
+
 var isInWarningArea: bool = false
 var isInInteractionZone: bool = false
+
+var currentInteractable: Node = null
 
 func _process(delta: float) -> void:
 	
@@ -28,6 +34,15 @@ func _process(delta: float) -> void:
 	
 	velocity = dir
 	move_and_slide()
+	
+	if Input.is_action_just_pressed('interact') and currentInteractable != null:
+		if currentInteractable.has_method('interact'):
+			currentInteractable.interact()
+			if currentInteractable:
+				ui.visible = true
+				label.text = currentInteractable.message
+			else:
+				ui.visible = false
 
 func _updateIcons():
 	if isInInteractionZone:
@@ -53,9 +68,12 @@ func _on_warning_interaction_area_area_exited(area):
 func _on_interaction_zone_area_entered(area):
 	if area.is_in_group("interactables"):
 		isInInteractionZone = true
+		currentInteractable = area.get_owner()
 		_updateIcons()
 
 func _on_interaction_zone_area_exited(area):
 	if area.is_in_group("interactables"):
 		isInInteractionZone = false
+		if currentInteractable == area.get_owner():
+			currentInteractable = null
 		_updateIcons()

@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="1_1lh1s"]
 [ext_resource type="Texture2D" uid="uid://c3gjntumds13t" path="res://assets/icons/questionMark.png" id="3_s4lhw"]
 [ext_resource type="Texture2D" uid="uid://dy6ovvy6361x7" path="res://assets/icons/exclamationPoint.png" id="4_lba0b"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_lm68q"]
+[ext_resource type="PackedScene" uid="uid://b1mu82a4fp616" path="res://assets/models/characters/player/frog.gltf" id="4_mmj15"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_soa4p"]
 
@@ -17,7 +16,6 @@ script = ExtResource("1_1lh1s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_lm68q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -44,6 +42,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone"]
 shape = SubResource("BoxShape3D_ya0hp")
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="DialogBox" type="PanelContainer" parent="UI"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/DialogBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="frog" parent="." instance=ExtResource("4_mmj15")]
+transform = Transform3D(0.145329, 0, 0, 0, 0.145329, 0, 0, 0, 0.145329, 0, 0, 0)
 
 [connection signal="area_entered" from="WarningArea" to="." method="_on_warning_interaction_area_area_entered"]
 [connection signal="area_exited" from="WarningArea" to="." method="_on_warning_interaction_area_area_exited"]

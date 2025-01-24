@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci84nq85ndbrd"]
+
+[ext_resource type="PackedScene" uid="uid://eptuo3heb4ef" path="res://Prop.tscn" id="1_gtnml"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lgtsh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ncwb3"]
+
+[node name="Cylinder" instance=ExtResource("1_gtnml")]
+message = "this is a cylinder"
+
+[node name="Model" parent="." index="0"]
+mesh = SubResource("CylinderMesh_lgtsh")
+
+[node name="CollisionShape" parent="Model/InteractArea" index="0"]
+shape = SubResource("CylinderShape3D_ncwb3")

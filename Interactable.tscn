@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmjw6gqjdwpcb"]
+
+[ext_resource type="Script" path="res://Interactable.gd" id="1_hom5t"]
+
+[node name="Interactable" type="Node3D"]
+script = ExtResource("1_hom5t")
