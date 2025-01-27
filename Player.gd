@@ -18,31 +18,36 @@ var isInInteractionZone: bool = false
 
 var currentInteractable: Node = null
 
+var isFrozen: bool = false
+
 func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("endSession"):
 		get_tree().quit()
 	
-	var move_input = Input.get_action_strength("back") - Input.get_action_strength("forward")
-	var turn_input = Input.get_action_strength("left") - Input.get_action_strength("right")
+	if !isFrozen:
+		var move_input = Input.get_action_strength("back") - Input.get_action_strength("forward")
+		var turn_input = Input.get_action_strength("left") - Input.get_action_strength("right")
+		
+		if turn_input != 0:
+			rotation.y += turn_input * rotation_speed * delta
+		
+		var dir = -transform.basis.z * move_input * speed
+		dir.y = 0
+		
+		velocity = dir
+		move_and_slide()
 	
-	if turn_input != 0:
-		rotation.y += turn_input * rotation_speed * delta
-	
-	var dir = -transform.basis.z * move_input * speed
-	dir.y = 0
-	
-	velocity = dir
-	move_and_slide()
-	
-	if Input.is_action_just_pressed('interact') and currentInteractable != null:
-		if currentInteractable.has_method('interact'):
-			currentInteractable.interact()
-			if currentInteractable:
-				ui.visible = true
-				label.text = currentInteractable.message
-			else:
-				ui.visible = false
+	if Input.is_action_just_pressed('interact'):
+		if !ui.visible and currentInteractable:
+			if currentInteractable.has_method('interact'):
+				currentInteractable.interact()
+			ui.visible = true
+			label.text = currentInteractable.message
+			isFrozen = true
+		elif ui.visible:
+			ui.visible = false
+			isFrozen = false
 
 func _updateIcons():
 	if isInInteractionZone:
