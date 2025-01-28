@@ -38,16 +38,16 @@ func _process(delta: float) -> void:
 		velocity = dir
 		move_and_slide()
 	
-	if Input.is_action_just_pressed('interact'):
-		if !ui.visible and currentInteractable:
+	if Input.is_action_just_pressed('interact') and currentInteractable:
 			if currentInteractable.has_method('interact'):
 				currentInteractable.interact()
-			ui.visible = true
+			
+			if currentInteractable.isDoor:
+				return
+			
+			ui.visible = !ui.visible
 			label.text = currentInteractable.message
-			isFrozen = true
-		elif ui.visible:
-			ui.visible = false
-			isFrozen = false
+			isFrozen = ui.visible
 
 func _updateIcons():
 	if isInInteractionZone:

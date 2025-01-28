@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhd0u2o78dsh7"]
+
+[ext_resource type="PackedScene" uid="uid://eptuo3heb4ef" path="res://Prop.tscn" id="1_v66ri"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5jek"]
+
+[node name="Door" instance=ExtResource("1_v66ri")]
+transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="ExitZone" type="Area3D" parent="." index="2"]
+transform = Transform3D(1.1, 0, 0, 0, 0.2, 0, 0, 0, 9.9792, 0, 0, 12.1291)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExitZone" index="0"]
+shape = SubResource("BoxShape3D_a5jek")

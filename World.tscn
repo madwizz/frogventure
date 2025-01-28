@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://noyo5w3mn81q"]
+[gd_scene load_steps=18 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="2_7n7d5"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cr4meoh8hbttl" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="3_c8wud"]
 [ext_resource type="PackedScene" uid="uid://p8vq37a1pv62" path="res://Box.tscn" id="4_vls01"]
 [ext_resource type="Script" path="res://CameraTrigger.gd" id="5_g36pe"]
+[ext_resource type="PackedScene" uid="uid://bpnikvw2m1ft" path="res://Prism.tscn" id="7_xeqoo"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="8_nnitm"]
+[ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="9_mr2b0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rstw0"]
 
@@ -30,10 +33,6 @@ background_mode = 2
 sky = SubResource("Sky_d2deg")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umwvo"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_umrnj"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_45ir1"]
 
 [node name="World" type="Node3D"]
 
@@ -109,21 +108,32 @@ script = ExtResource("5_g36pe")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera4/CameraArea4"]
 shape = SubResource("BoxShape3D_umwvo")
 
-[node name="Turntable" parent="." instance=ExtResource("4_vls01")]
-transform = Transform3D(-0.683439, 0, -0.730007, 0, 1, 0, 0.730007, 0, -0.683439, 5.25598, 0.945446, 12.7234)
+[node name="Prop" parent="." instance=ExtResource("7_xeqoo")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6, 1, 2)
 
-[node name="table" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.888471, 0, -0.949009, 0, 1.3, 0, 0.949009, 0, -0.888471, 5.27521, -0.186153, 12.7508)
-mesh = SubResource("BoxMesh_umrnj")
-skeleton = NodePath("../Turntable")
+[node name="Cylinder" parent="." instance=ExtResource("8_nnitm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 6)
 
-[node name="DoorA" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.166135, 0, 0, 0, 4.32999, 0, 0, 0, 1.59056, -7.62617, 0.63973, 3.18557)
-mesh = SubResource("BoxMesh_45ir1")
+[node name="Box" parent="." instance=ExtResource("4_vls01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 14)
+message = "this is a box"
 
-[node name="DoorB" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.26199e-09, 0, 1.59056, 0, 4.32999, 0, 0.166135, 0, -6.95255e-08, 2.30519, 0.63973, 15.3394)
-mesh = SubResource("BoxMesh_45ir1")
+[node name="Door" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
+transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -4, 0, 0)
+isDoor = true
+exitZone = NodePath("../Door2/ExitZone")
+player = NodePath("../Player")
+
+[node name="Door3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_mr2b0")]
+transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -1, 0, 0)
+player = NodePath("../Player")
+message = "Shit's locked"
+
+[node name="Door2" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
+transform = Transform3D(-4.37114e-08, 0, 0.1, 0, 3.90214, 0, -1, 0, -4.37114e-09, 0, 0, 12)
+isDoor = true
+exitZone = NodePath("../Door/ExitZone")
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
@@ -133,3 +143,7 @@ mesh = SubResource("BoxMesh_45ir1")
 [connection signal="body_exited" from="Camera3/CameraArea3" to="Camera3/CameraArea3" method="exitTrigger"]
 [connection signal="body_entered" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="enterTrigger"]
 [connection signal="body_exited" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="exitTrigger"]
+
+[editable path="Door"]
+[editable path="Door3"]
+[editable path="Door2"]

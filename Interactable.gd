@@ -2,6 +2,6 @@ extends Node3D
 
 class_name Interactable
 
-@export var message: String
+@export var player: CharacterBody3D
 @export var isCharacter: bool
-@export var isDoor: bool
+@export var message: String
