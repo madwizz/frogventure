@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 				return
 			
 			ui.visible = !ui.visible
+			dialogBox.visible = ui.visible
 			label.text = currentInteractable.message
 			isFrozen = ui.visible
 
