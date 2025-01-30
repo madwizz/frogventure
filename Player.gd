@@ -56,9 +56,11 @@ func _process(delta: float) -> void:
 
 func fadeIn():
 	ui.visible = true
+	isFrozen = true
 	animPlayer.play('fadeIn')
 
 func fadeOut():
+	isFrozen = false
 	animPlayer.play('fadeOut')
 	ui.visible = true
 

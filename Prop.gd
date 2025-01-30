@@ -8,4 +8,6 @@ func interact():
 		player.fadeIn()
 		await player.animPlayer.animation_finished
 		player.global_transform.origin = exitZone.global_transform.origin
+		var exitDir = exitZone.global_transform.basis
+		player.global_transform.basis = exitDir
 		player.fadeOut()
