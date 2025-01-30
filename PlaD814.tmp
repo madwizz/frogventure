@@ -114,6 +114,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -125,7 +126,6 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_5y4s4")
 }
-autoplay = "RESET"
 
 [connection signal="area_entered" from="WarningArea" to="." method="_on_warning_interaction_area_area_entered"]
 [connection signal="area_exited" from="WarningArea" to="." method="_on_warning_interaction_area_area_exited"]

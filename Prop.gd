@@ -5,4 +5,7 @@ class_name Prop extends Interactable
 
 func interact():
 	if isDoor and exitZone:
+		player.fadeIn()
+		await player.animPlayer.animation_finished
 		player.global_transform.origin = exitZone.global_transform.origin
+		player.fadeOut()

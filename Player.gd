@@ -10,8 +10,11 @@ extends CharacterBody3D
 @onready var interactionZone: Area3D = $InteractionZone
 
 @onready var ui: CanvasLayer = $UI
+@onready var colorRect: ColorRect = $UI/ColorRect
 @onready var dialogBox: PanelContainer = $UI/DialogBox
 @onready var label: Label = $UI/DialogBox/Label
+
+@onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
 var isInWarningArea: bool = false
 var isInInteractionZone: bool = false
@@ -43,11 +46,20 @@ func _process(delta: float) -> void:
 				currentInteractable.interact()
 			
 			if currentInteractable.isDoor:
+				dialogBox.visible = false
 				return
 			
 			ui.visible = !ui.visible
 			label.text = currentInteractable.message
 			isFrozen = ui.visible
+
+func fadeIn():
+	ui.visible = true
+	animPlayer.play('fadeIn')
+
+func fadeOut():
+	animPlayer.play('fadeOut')
+	ui.visible = true
 
 func _updateIcons():
 	if isInInteractionZone:
