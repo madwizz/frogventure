@@ -62,7 +62,7 @@ mesh = SubResource("PlaneMesh_rstw0")
 surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
 [node name="Player" parent="." instance=ExtResource("2_7n7d5")]
-transform = Transform3D(0.762149, 0, 0.647402, 0, 1, 0, -0.647402, 0, 0.762149, 4.56549, 0, 12.6572)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3, 0, 2)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1uf3a")
@@ -117,11 +117,9 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [node name="Cylinder" parent="." instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 6)
 
-[node name="Box" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_vls01")]
+[node name="Box" parent="." instance=ExtResource("4_vls01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 14)
-finishDay = true
-player = NodePath("../Player")
-message = ""
+message = "this is a box"
 
 [node name="Door" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -4, 0, 0)
@@ -131,7 +129,6 @@ player = NodePath("../Player")
 
 [node name="Door3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -1, 0, 0)
-hasText = true
 player = NodePath("../Player")
 message = "Shit's locked"
 

@@ -11,8 +11,12 @@ extends CharacterBody3D
 
 @onready var ui: CanvasLayer = $UI
 @onready var colorRect: ColorRect = $UI/ColorRect
+@onready var dayText: Control = $UI/ColorRect/DayText
 @onready var dialogBox: PanelContainer = $UI/DialogBox
 @onready var label: Label = $UI/DialogBox/Label
+
+@onready var today: Label = $UI/ColorRect/DayText/Today
+@onready var daysRemain: Label = $UI/ColorRect/DayText/DaysRemain
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
@@ -22,6 +26,9 @@ var isInInteractionZone: bool = false
 var currentInteractable: Node = null
 
 var isFrozen: bool = false
+
+func _ready():
+	ui.visible = false
 
 func _process(delta: float) -> void:
 	
@@ -43,26 +50,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed('interact') and currentInteractable:
 			if currentInteractable.has_method('interact'):
-				currentInteractable.interact()
-			
-			if currentInteractable.isDoor:
-				dialogBox.visible = false
-				return
-			
-			ui.visible = !ui.visible
-			dialogBox.visible = ui.visible
-			label.text = currentInteractable.message
-			isFrozen = ui.visible
-
-func fadeIn():
-	ui.visible = true
-	isFrozen = true
-	animPlayer.play('fadeIn')
-
-func fadeOut():
-	isFrozen = false
-	animPlayer.play('fadeOut')
-	ui.visible = true
+				currentInteractable.interact(currentInteractable)
 
 func _updateIcons():
 	if isInInteractionZone:
