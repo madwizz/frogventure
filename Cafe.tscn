@@ -470,10 +470,9 @@ mesh = SubResource("PlaneMesh_2kfh8")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4no61")
 
-[node name="CafeDoor" parent="Entrance" node_paths=PackedStringArray("player") instance=ExtResource("3_k3xsx")]
+[node name="CafeDoor" parent="Entrance" instance=ExtResource("3_k3xsx")]
 transform = Transform3D(1, 1.70568e-07, 4.37112e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37112e-08, -1.36454e-06, 0.1, 18.997, 1, 18.2833)
 hasText = true
-player = NodePath("")
 message = "To the cafe"
 
 [node name="Model" parent="Entrance/CafeDoor" index="0"]
@@ -482,10 +481,9 @@ transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.5265
 [node name="ExitZone" parent="Entrance/CafeDoor" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
 
-[node name="CafeDoor2" parent="Entrance" node_paths=PackedStringArray("player") instance=ExtResource("3_k3xsx")]
+[node name="CafeDoor2" parent="Entrance" instance=ExtResource("3_k3xsx")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, -4.37114e-08, 3.90214, 3.49691e-08, -2.98023e-08, 1.36454e-06, -0.1, 16.0699, 1, 17.9371)
 hasText = true
-player = NodePath("")
 message = "To the cafe"
 
 [node name="Model" parent="Entrance/CafeDoor2" index="0"]

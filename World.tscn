@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://noyo5w3mn81q"]
+[gd_scene load_steps=39 format=3 uid="uid://noyo5w3mn81q"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3koha"]
 [ext_resource type="Script" uid="uid://2hyw25pemahj" path="res://World.gd" id="1_silin"]
@@ -10,6 +10,26 @@
 [ext_resource type="PackedScene" uid="uid://bpnikvw2m1ft" path="res://Prism.tscn" id="7_xeqoo"]
 [ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="8_nnitm"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="9_mr2b0"]
+[ext_resource type="PackedScene" uid="uid://dnaoj5ofifqqg" path="res://assets/models/characters/Nastya Lexa/NastyaLexa.gltf" id="11_kva58"]
+[ext_resource type="PackedScene" uid="uid://bsmh1oqo5d1se" path="res://assets/models/characters/Vasya/Vasya.gltf" id="12_b2ar6"]
+[ext_resource type="PackedScene" uid="uid://bvd4vbbpig0u2" path="res://assets/models/characters/Misha Vagner/MishaVag.gltf" id="12_gn8l5"]
+[ext_resource type="PackedScene" uid="uid://cnptcddvcq3rd" path="res://assets/models/characters/Anya Syrovatskay/AnyaSyrovatskay.gltf" id="13_ee7l0"]
+[ext_resource type="PackedScene" uid="uid://p27y5c6va0b6" path="res://assets/models/characters/Dima Tori/DimaTori.gltf" id="15_6w02q"]
+[ext_resource type="PackedScene" uid="uid://k1cryk206iw0" path="res://assets/models/characters/Polya Kostya/PolyaKostya.gltf" id="16_6w02q"]
+[ext_resource type="PackedScene" uid="uid://cmgnm0awb8d6i" path="res://assets/models/characters/Irene/Irene.gltf" id="17_1fphk"]
+[ext_resource type="PackedScene" uid="uid://r2d7y2o38aj8" path="res://assets/models/characters/Tagir/Tagir.gltf" id="18_sjtuv"]
+[ext_resource type="PackedScene" uid="uid://sgkg7pab5ids" path="res://assets/models/characters/Anya Koroleva/AnyaKoroleva.gltf" id="19_cvq6i"]
+[ext_resource type="PackedScene" uid="uid://bsapha1atcij2" path="res://assets/models/characters/Tori/Tori.gltf" id="20_6tx0c"]
+[ext_resource type="PackedScene" uid="uid://dshah4bsqciw8" path="res://assets/models/characters/Lexa/Lexa.gltf" id="21_0to5b"]
+[ext_resource type="PackedScene" uid="uid://csf5sne6jmtlw" path="res://assets/models/characters/Nastya Semen/NastyaSemen.gltf" id="22_5j71u"]
+[ext_resource type="PackedScene" uid="uid://bnfm011kn5eko" path="res://assets/models/characters/Kostya/Kostya.gltf" id="23_jyqkj"]
+[ext_resource type="PackedScene" uid="uid://nfr7y5drpf05" path="res://assets/models/characters/Dr Tucovic/DrTucovic.gltf" id="24_ydbc3"]
+[ext_resource type="PackedScene" uid="uid://d0kuorary3ta1" path="res://assets/models/characters/Lesya/Lesya.gltf" id="25_aj1ai"]
+[ext_resource type="PackedScene" uid="uid://c4eu2jg1ffl7o" path="res://assets/models/characters/Sasha/Sasha.gltf" id="26_d7dfr"]
+[ext_resource type="PackedScene" uid="uid://cvy2s5kq06f0q" path="res://assets/models/characters/Vika Bovsh/VikaBovsh.gltf" id="27_c2gv2"]
+[ext_resource type="PackedScene" uid="uid://b5pme11eggweg" path="res://assets/models/characters/Anya Haustova/AnyaHaustova.gltf" id="28_rp4qs"]
+[ext_resource type="PackedScene" uid="uid://c0yfxtncjluqy" path="res://assets/models/characters/Katya/Katya.gltf" id="29_rhl3w"]
+[ext_resource type="PackedScene" uid="uid://c4c167y1xiurc" path="res://assets/models/characters/Manas/Manas.gltf" id="30_bun23"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rstw0"]
 
@@ -63,6 +83,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iyxlp")
 
 [node name="Player" parent="." instance=ExtResource("2_7n7d5")]
 transform = Transform3D(0.762149, 0, 0.647402, 0, 1, 0, -0.647402, 0, 0.762149, 4.56549, 0, 12.6572)
+
+[node name="MeshInstance3D" parent="Player" index="0"]
+visible = false
+
+[node name="Irene" parent="Player" instance=ExtResource("17_1fphk")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1uf3a")
@@ -141,6 +166,65 @@ isDoor = true
 exitZone = NodePath("../Door/ExitZone")
 player = NodePath("../Player")
 
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="AnyaSyrovatskay" parent="Characters" instance=ExtResource("13_ee7l0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55227, 0, 1.47259)
+
+[node name="MishaVag" parent="Characters" instance=ExtResource("12_gn8l5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53099, 0, 2.64057)
+
+[node name="NastyaLexa" parent="Characters" instance=ExtResource("11_kva58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41637, 0, 3.60343)
+
+[node name="Vasya" parent="Characters" instance=ExtResource("12_b2ar6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.529211, 0, 1.48126)
+
+[node name="DimaTori" parent="Characters" instance=ExtResource("15_6w02q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45885, 0, 2.76763)
+
+[node name="PolyaKostya" parent="Characters" instance=ExtResource("16_6w02q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4628, 0, 1.45784)
+
+[node name="Tagir" parent="Characters" instance=ExtResource("18_sjtuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61228, 0, 0.47933)
+
+[node name="AnyaKoroleva" parent="Characters" instance=ExtResource("19_cvq6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45842, 0, 2.5019)
+
+[node name="Tori" parent="Characters" instance=ExtResource("20_6tx0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55175, 0, 3.58664)
+
+[node name="Lexa" parent="Characters" instance=ExtResource("21_0to5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57908, 0, 2.49251)
+
+[node name="NastyaSemen" parent="Characters" instance=ExtResource("22_5j71u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50179, 0, 4.5782)
+
+[node name="Kostya" parent="Characters" instance=ExtResource("23_jyqkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49697, 0, 0.650038)
+
+[node name="DrTucovic" parent="Characters" instance=ExtResource("24_ydbc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.498, 0, 4.57241)
+
+[node name="Lesya" parent="Characters" instance=ExtResource("25_aj1ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.611709, 0, 3.47864)
+
+[node name="Sasha" parent="Characters" instance=ExtResource("26_d7dfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52966, 0, 4.45279)
+
+[node name="VikaBovsh" parent="Characters" instance=ExtResource("27_c2gv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58589, 0, 3.4821)
+
+[node name="AnyaHaustova" parent="Characters" instance=ExtResource("28_rp4qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21764, 0, 1.44996)
+
+[node name="Katya" parent="Characters" instance=ExtResource("29_rhl3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32587, 0, 4.50454)
+
+[node name="Manas" parent="Characters" instance=ExtResource("30_bun23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4675, 0, 0.644863)
+
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera2/CameraArea2" to="Camera2/CameraArea2" method="enterTrigger"]
@@ -150,6 +234,7 @@ player = NodePath("../Player")
 [connection signal="body_entered" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="enterTrigger"]
 [connection signal="body_exited" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="exitTrigger"]
 
+[editable path="Player"]
 [editable path="Door"]
 [editable path="Door3"]
 [editable path="Door2"]

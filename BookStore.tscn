@@ -448,10 +448,9 @@ mesh = SubResource("PlaneMesh_0qrk5")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_w33v5")
 
-[node name="BookStoreDoor" parent="BookStoreEntrance" node_paths=PackedStringArray("player") instance=ExtResource("3_wrf2r")]
+[node name="BookStoreDoor" parent="BookStoreEntrance" instance=ExtResource("3_wrf2r")]
 transform = Transform3D(-1.91847e-13, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -1.95399e-14, 15.7341, 1, 3.28326)
 hasText = true
-player = NodePath("")
 message = "To the cafe"
 
 [node name="Model" parent="BookStoreEntrance/BookStoreDoor" index="0"]
@@ -460,10 +459,9 @@ transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.5265
 [node name="ExitZone" parent="BookStoreEntrance/BookStoreDoor" index="2"]
 transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
 
-[node name="BookStoreDoor2" parent="BookStoreEntrance" node_paths=PackedStringArray("player") instance=ExtResource("3_wrf2r")]
+[node name="BookStoreDoor2" parent="BookStoreEntrance" instance=ExtResource("3_wrf2r")]
 transform = Transform3D(-8.74226e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74226e-09, 16.3387, 1, 0.587187)
 hasText = true
-player = NodePath("")
 message = "To the cafe"
 
 [node name="Model" parent="BookStoreEntrance/BookStoreDoor2" index="0"]
