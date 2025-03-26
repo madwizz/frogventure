@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8l8181ugqmcr"]
+
+[ext_resource type="Texture2D" uid="uid://d1ycujafxw825" path="res://addons/kenney_prototype_textures/purple/texture_09.png" id="1_x3g6e"]
+[ext_resource type="Texture2D" uid="uid://cr4meoh8hbttl" path="res://addons/kenney_prototype_textures/purple/texture_10.png" id="2_30lbi"]
+[ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="3_30lbi"]
+[ext_resource type="PackedScene" uid="uid://eptuo3heb4ef" path="res://Prop.tscn" id="4_acvur"]
+[ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_ombsg"]
+[ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="6_j8b0s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x3g6e"]
+sky_top_color = Color(0.607797, 0.122464, 0.913977, 1)
+sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
+
+[sub_resource type="Sky" id="Sky_d2deg"]
+sky_material = SubResource("ProceduralSkyMaterial_x3g6e")
+
+[sub_resource type="Environment" id="Environment_30lbi"]
+background_mode = 2
+sky = SubResource("Sky_d2deg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acvur"]
+albedo_texture = ExtResource("1_x3g6e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ombsg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8b0s"]
+albedo_texture = ExtResource("2_30lbi")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8b0s"]
+
+[node name="Scene1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_30lbi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_30lbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 0, 4)
+material_override = SubResource("StandardMaterial3D_acvur")
+mesh = SubResource("PlaneMesh_ombsg")
+surface_material_override/0 = SubResource("StandardMaterial3D_j8b0s")
+
+[node name="Prop" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_acvur")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+isDoor = true
+nextScenePath = "res://Scene2.tscn"
+player = NodePath("../Player")
+
+[node name="Camera4" type="Camera3D" parent="."]
+transform = Transform3D(0.752966, 0, -0.658059, 0, 1, 0, 0.658059, 0, 0.752966, -6.21668, 2, 6.93348)
+
+[node name="CameraArea4" type="Area3D" parent="Camera4"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("5_ombsg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera4/CameraArea4"]
+shape = SubResource("BoxShape3D_j8b0s")
+
+[node name="Door2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_j8b0s")]
+transform = Transform3D(-4.37114e-08, 0, -0.1, 0, 3.90214, 0, 1, 0, -4.37114e-09, -1, 2, 4)
+isDoor = true
+nextScenePath = "res://Scene2.tscn"
+player = NodePath("../Player")
+
+[connection signal="body_entered" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="enterTrigger"]
+[connection signal="body_exited" from="Camera4/CameraArea4" to="Camera4/CameraArea4" method="exitTrigger"]
+
+[editable path="Prop"]
+[editable path="Door2"]

@@ -1,16 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgebkr13xxyp"]
+[gd_scene load_steps=6 format=3 uid="uid://dfgenrnfwwtas"]
 
-[ext_resource type="Script" uid="uid://cthbuwa11gvja" path="res://Player.gd" id="1_1lh1s"]
-[ext_resource type="Texture2D" uid="uid://c3gjntumds13t" path="res://assets/icons/questionMark.png" id="3_s4lhw"]
-[ext_resource type="Texture2D" uid="uid://dy6ovvy6361x7" path="res://assets/icons/exclamationPoint.png" id="4_lba0b"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ngit5"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_soa4p"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_u2jje"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ya0hp"]
+[ext_resource type="Script" uid="uid://dhlajl531rfo2" path="res://Transition.gd" id="1_ws5yv"]
 
 [sub_resource type="Animation" id="Animation_usw1v"]
 length = 0.001
@@ -102,42 +92,13 @@ _data = {
 &"fadeOut": SubResource("Animation_2lnok")
 }
 
-[node name="Player" type="CharacterBody3D" groups=["player"]]
-script = ExtResource("1_1lh1s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_ngit5")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_soa4p")
-
-[node name="QuestionIcon" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0876743, 0, -0.0171248, 0, 0.0893311, 0, 0.0171248, 0, -0.0876743, 0, 2.36573, 0)
-visible = false
-texture = ExtResource("3_s4lhw")
-
-[node name="ExclamationIcon" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0876743, 0, -0.0171248, 0, 0.0893311, 0, 0.0171248, 0, -0.0876743, 0, 2.36573, 0)
-visible = false
-texture = ExtResource("4_lba0b")
-
-[node name="WarningArea" type="Area3D" parent="."]
-transform = Transform3D(3.99344, 0, 0, 0, 1, 0, 0, 0, 3.98841, 0, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WarningArea"]
-shape = SubResource("CylinderShape3D_u2jje")
-
-[node name="InteractionZone" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone"]
-shape = SubResource("BoxShape3D_ya0hp")
+[node name="Transition" type="Node"]
+script = ExtResource("1_ws5yv")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" type="PanelContainer" parent="UI"]
+visible = false
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -215,8 +176,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_5y4s4")
 }
 autoplay = "RESET"
-
-[connection signal="area_entered" from="WarningArea" to="." method="_on_warning_interaction_area_area_entered"]
-[connection signal="area_exited" from="WarningArea" to="." method="_on_warning_interaction_area_area_exited"]
-[connection signal="area_entered" from="InteractionZone" to="." method="_on_interaction_zone_area_entered"]
-[connection signal="area_exited" from="InteractionZone" to="." method="_on_interaction_zone_area_exited"]

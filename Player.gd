@@ -28,6 +28,7 @@ var currentInteractable: Node = null
 var isFrozen: bool = false
 
 func _ready():
+	Game.player = self
 	ui.visible = false
 
 func _process(delta: float) -> void:

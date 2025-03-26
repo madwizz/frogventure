@@ -5,59 +5,42 @@ class_name Prop extends Interactable
 @export var finishDay: bool
 @export var exitZone: Area3D
 
-var counter: int = 1
-var days := [
-	"The Second Day",
-	"The Third Day",
-	"The Fourth Day",
-	"The Fifth Day",
-	"The Sixth Day",
-	"The Day"
-]
-
-var daysRemain := [
-	"-Five Days Remain-",
-	"-Four Days Remain-",
-	"-Three Days Remain-",
-	"-Two Days Remain-",
-	"-One Day Remains-",
-	"-You've Been Waiting For-"
-]
+@export var nextScenePath: String
 
 func interact(currentInteractable):
 	
+	print('interact')
+	
 	if hasText:
-		player.dialogBox.visible = true
-		player.ui.visible = !player.ui.visible
-		player.label.text = currentInteractable.message
-		player.isFrozen = player.ui.visible
+		Game.player.dialogBox.visible = true
+		Game.player.ui.visible = !Game.player.ui.visible
+		Game.player.label.text = currentInteractable.message
+		Game.player.isFrozen = Game.player.ui.visible
 	
 	if finishDay:
-		player.ui.visible = true
-		player.dialogBox.visible = false
-		player.dayText.visible = true
-		player.today.text = days[counter]
-		player.daysRemain.text = daysRemain[counter]
-		counter += 1
-		fadeIn()
-		await player.animPlayer.animation_finished
-		fadeOut()
+		Game.player.ui.visible = true
+		Game.player.dialogBox.visible = false
+		Game.player.dayText.visible = true
+		Game.player.today.text = Game.days[Game.counter]
+		Game.player.daysRemain.text = Game.daysRemain[Game.counter]
+		Game.counter += 1
+		#fadeIn()
+		#await player.animPlayer.animation_finished
+		#fadeOut()
 	
-	if isDoor and exitZone:
-		player.dialogBox.visible = false
-		fadeIn()
-		await player.animPlayer.animation_finished
-		player.global_transform.origin = exitZone.global_transform.origin
-		var exitDir = exitZone.global_transform.basis
-		player.global_transform.basis = exitDir
-		fadeOut()
+	if isDoor and nextScenePath:
+		Game.player.dialogBox.visible = false
+		#fadeIn()
+		#await Game.player.animPlayer.animation_finished
+		Transition.changeScene(nextScenePath)
+		#fadeOut()
 
-func fadeIn():
-	player.ui.visible = true
-	player.isFrozen = true
-	player.animPlayer.play('fadeIn')
-
-func fadeOut():
-	player.isFrozen = false
-	player.animPlayer.play('fadeOut')
-	player.ui.visible = true
+#func fadeIn():
+	#player.ui.visible = true
+	#player.isFrozen = true
+	#player.animPlayer.play('fadeIn')
+#
+#func fadeOut():
+	#player.isFrozen = false
+	#player.animPlayer.play('fadeOut')
+	#player.ui.visible = true
