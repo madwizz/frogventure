@@ -15,6 +15,11 @@ run/main_scene="res://World.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icons/projectIcon.png"
 
+[autoload]
+
+Transition="*res://Transition.tscn"
+Game="*res://Game.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
