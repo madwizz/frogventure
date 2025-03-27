@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy7dbyvsa14ug"]
+[gd_scene load_steps=3 format=3 uid="uid://dy7dbyvsa14ug"]
 
 [ext_resource type="Script" uid="uid://d2uvvgye51vs6" path="res://Game.gd" id="1_wbfu4"]
+[ext_resource type="AudioStream" uid="uid://d4baxqt15yg3c" path="res://assets/music/piano frogventure.mp3" id="2_xkndl"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_wbfu4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_xkndl")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_xkndl")

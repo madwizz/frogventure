@@ -11,12 +11,12 @@ extends CharacterBody3D
 
 @onready var ui: CanvasLayer = $UI
 @onready var colorRect: ColorRect = $UI/ColorRect
-@onready var dayText: Control = $UI/ColorRect/DayText
 @onready var dialogBox: PanelContainer = $UI/DialogBox
 @onready var label: Label = $UI/DialogBox/Label
 
-@onready var today: Label = $UI/ColorRect/DayText/Today
-@onready var daysRemain: Label = $UI/ColorRect/DayText/DaysRemain
+@onready var info: Control = $UI/ColorRect/Info
+@onready var sceneName: Label = $UI/ColorRect/Info/SceneName
+@onready var task: Label = $UI/ColorRect/Info/Task
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 

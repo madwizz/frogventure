@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://eypnfpfxa30i"]
+[gd_scene load_steps=20 format=3 uid="uid://eypnfpfxa30i"]
 
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="1_lrjmk"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="2_vmmil"]
@@ -37,12 +37,25 @@ albedo_texture = ExtResource("6_mipmt")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb7sy"]
 albedo_texture = ExtResource("7_v16rt")
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vmmil"]
+sky_top_color = Color(0.896311, 0.929735, 0.996621, 1)
+sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
+
+[sub_resource type="Sky" id="Sky_vmmil"]
+sky_material = SubResource("ProceduralSkyMaterial_vmmil")
+
+[sub_resource type="Environment" id="Environment_0u17q"]
+background_mode = 2
+sky = SubResource("Sky_vmmil")
+
 [node name="GroundFloor" type="Node3D"]
 
 [node name="StairsGround" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -1, 1, -8)
 isDoor = true
 nextScenePath = "res://Floor5.tscn"
+nextSceneName = "5th Floor"
+nextSceneMessage = "-go home-"
 player = NodePath("../Player")
 message = "to the floor 5"
 
@@ -82,6 +95,8 @@ message = "The elevator is not operational. Better use stairs."
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, -1.00298, 1, 7.96754)
 isDoor = true
 nextScenePath = "res://Entrance.tscn"
+nextSceneName = "Cvetanova Cuprija"
+nextSceneMessage = "-check the bus stop-"
 player = NodePath("../Player")
 message = "To the entrance"
 
@@ -644,6 +659,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gl40s")
 
 [node name="Player" parent="." instance=ExtResource("8_vmmil")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0u17q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
 
 [connection signal="body_entered" from="Camera5/CameraArea1" to="Camera5/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera5/CameraArea1" to="Camera5/CameraArea1" method="exitTrigger"]

@@ -1,0 +1,554 @@
+[gd_scene load_steps=20 format=3 uid="uid://dgir3likowdob"]
+
+[ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_ppefo"]
+[ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="2_8cc15"]
+[ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="3_2fcy6"]
+[ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="4_nyk16"]
+[ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_j6ct1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h87hw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qt8ew"]
+shading_mode = 0
+albedo_texture = ExtResource("1_ppefo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h87hw"]
+size = Vector3(1.19971, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j6ct1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryrrj"]
+shading_mode = 0
+albedo_texture = ExtResource("1_ppefo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nk2aw"]
+size = Vector3(1.19971, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_to5hs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dews6"]
+shading_mode = 0
+albedo_texture = ExtResource("1_ppefo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sinn2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aulr"]
+shading_mode = 0
+albedo_texture = ExtResource("4_nyk16")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ek4pc"]
+size = Vector3(1.19971, 1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j6ct1"]
+sky_top_color = Color(8.18223e-07, 0.732276, 0.0786369, 1)
+sky_horizon_color = Color(0.744551, 0.628285, 0.561799, 1)
+
+[sub_resource type="Sky" id="Sky_j8v0v"]
+sky_material = SubResource("ProceduralSkyMaterial_j6ct1")
+
+[sub_resource type="Environment" id="Environment_ryrrj"]
+background_mode = 2
+sky = SubResource("Sky_j8v0v")
+
+[node name="CafeOutside" type="Node3D"]
+
+[node name="BusStop" type="Node3D" parent="."]
+
+[node name="FLoorTileGroup" type="Node3D" parent="BusStop"]
+
+[node name="FloorTile53" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile54" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile55" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile56" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile57" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile58" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile59" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile60" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile61" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile62" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile63" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="FloorTile64" type="MeshInstance3D" parent="BusStop/FLoorTileGroup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("PlaneMesh_h87hw")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qt8ew")
+
+[node name="CafeBusStopCamera" type="Camera3D" parent="BusStop"]
+transform = Transform3D(0.0657515, 0, -0.997836, 0, 1, 0, 0.997836, 0, 0.0657515, 0.0517118, 1.37699, 3.02121)
+
+[node name="CameraArea1" type="Area3D" parent="BusStop/CafeBusStopCamera"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("2_8cc15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BusStop/CafeBusStopCamera/CameraArea1"]
+transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
+shape = SubResource("BoxShape3D_h87hw")
+
+[node name="CafeBusStop" parent="BusStop" node_paths=PackedStringArray("player") instance=ExtResource("3_2fcy6")]
+transform = Transform3D(-1, -4.26326e-14, -8.74228e-09, -8.74228e-08, -1.53511e-06, 0.1, -1.06581e-14, 3.90214, 3.93402e-08, 0.997002, 0.941888, 2.9675)
+isDoor = true
+nextScenePath = "res://BookStoreBusStop.tscn"
+nextSceneName = "BookStore Street"
+nextSceneMessage = "-go buy some books-"
+player = NodePath("../../Player")
+message = "Go to the bookstore?"
+
+[node name="Alley" type="Node3D" parent="."]
+
+[node name="FLoorTileGroup2" type="Node3D" parent="Alley"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="FloorTile53" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile54" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile55" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile56" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile57" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile58" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile59" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile60" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile61" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile62" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile63" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile64" type="MeshInstance3D" parent="Alley/FLoorTileGroup2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FLoorTileGroup3" type="Node3D" parent="Alley"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="FloorTile53" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile54" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile55" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile56" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile57" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile58" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile59" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile60" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile61" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile62" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile63" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile64" type="MeshInstance3D" parent="Alley/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FLoorTileGroup4" type="Node3D" parent="Alley"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
+
+[node name="FloorTile53" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile54" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile55" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile56" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile57" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile58" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile59" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile60" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile61" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile62" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile63" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="FloorTile64" type="MeshInstance3D" parent="Alley/FLoorTileGroup4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("PlaneMesh_j6ct1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ryrrj")
+
+[node name="CafeAlleyCamera" type="Camera3D" parent="Alley"]
+transform = Transform3D(-0.897027, 0, 0.441975, 0, 1, 0, -0.441975, 0, -0.897027, 20.2292, 1.37699, -0.200108)
+
+[node name="CameraArea1" type="Area3D" parent="Alley/CafeAlleyCamera"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("2_8cc15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Alley/CafeAlleyCamera/CameraArea1"]
+transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
+shape = SubResource("BoxShape3D_nk2aw")
+
+[node name="Entrance" type="Node3D" parent="."]
+
+[node name="FLoorTileGroup3" type="Node3D" parent="Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12)
+
+[node name="FloorTile53" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile54" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile55" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile56" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile57" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile58" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile59" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile60" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile61" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile62" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile63" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="FloorTile64" type="MeshInstance3D" parent="Entrance/FLoorTileGroup3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
+mesh = SubResource("PlaneMesh_to5hs")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dews6")
+
+[node name="WallTile55" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 23.9289, 1, 15)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="WallTile56" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(4.37114e-08, -1, -2.62268e-07, -1, -4.37114e-08, 0, -1.14641e-14, 2.62268e-07, -1, 23.9289, 1, 17)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="WallTile57" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(1.24345e-14, -2.83122e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.83122e-07, 22.9289, 1, 18)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="WallTile58" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(1.24345e-14, -2.83122e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.83122e-07, 20.9289, 1, 18)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="WallTile59" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(1.24345e-14, -2.83122e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.83122e-07, 18.9289, 1, 18)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="WallTile61" type="MeshInstance3D" parent="Entrance"]
+transform = Transform3D(1.24345e-14, -2.83122e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.83122e-07, 16.9289, 1, 18)
+mesh = SubResource("PlaneMesh_sinn2")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_3aulr")
+
+[node name="Door2Cafe" parent="Entrance" node_paths=PackedStringArray("player") instance=ExtResource("3_2fcy6")]
+transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, -4.37114e-08, 3.90214, 3.49691e-08, -2.98023e-08, 1.36454e-06, -0.1, 16.0699, 1, 17.9371)
+isDoor = true
+nextScenePath = "res://CafeInterior.tscn"
+nextSceneName = "Coffee Shop"
+nextSceneMessage = "-buy coffee-"
+player = NodePath("../../Player")
+message = "To the cafe"
+
+[node name="Model" parent="Entrance/Door2Cafe" index="0"]
+transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
+
+[node name="ExitZone" parent="Entrance/Door2Cafe" index="2"]
+transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.42109e-14, 1.13687e-13, 0, 9.9792, -1.42678, 0, 12.1291)
+
+[node name="CafeEntranceCamera2" type="Camera3D" parent="Entrance"]
+transform = Transform3D(-0.75207, 0, 0.659083, 0, 1, 0, -0.659083, 0, -0.75207, 23.0451, 1.37699, 11.7834)
+
+[node name="CameraArea1" type="Area3D" parent="Entrance/CafeEntranceCamera2"]
+transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
+script = ExtResource("2_8cc15")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Entrance/CafeEntranceCamera2/CameraArea1"]
+transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972371, -0.0123985, 0.160301, -0.0359095)
+shape = SubResource("BoxShape3D_ek4pc")
+
+[node name="Player" parent="." instance=ExtResource("5_j6ct1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 3)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ryrrj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
+shadow_enabled = true
+
+[connection signal="body_entered" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="Alley/CafeAlleyCamera/CameraArea1" to="Alley/CafeAlleyCamera/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="Alley/CafeAlleyCamera/CameraArea1" to="Alley/CafeAlleyCamera/CameraArea1" method="exitTrigger"]
+[connection signal="body_entered" from="Entrance/CafeEntranceCamera2/CameraArea1" to="Entrance/CafeEntranceCamera2/CameraArea1" method="enterTrigger"]
+[connection signal="body_exited" from="Entrance/CafeEntranceCamera2/CameraArea1" to="Entrance/CafeEntranceCamera2/CameraArea1" method="exitTrigger"]
+
+[editable path="BusStop/CafeBusStop"]
+[editable path="Entrance/Door2Cafe"]

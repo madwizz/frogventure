@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4baxqt15yg3c"
+path="res://.godot/imported/piano frogventure.mp3-f638d0a574e62b6701b238deb7a387ac.mp3str"
+
+[deps]
+
+source_file="res://assets/music/piano frogventure.mp3"
+dest_files=["res://.godot/imported/piano frogventure.mp3-f638d0a574e62b6701b238deb7a387ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

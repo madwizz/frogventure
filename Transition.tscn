@@ -19,7 +19,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/ColorRect/DayText:modulate")
+tracks/1/path = NodePath("UI/ColorRect/Info:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -47,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/ColorRect/DayText:modulate")
+tracks/1/path = NodePath("UI/ColorRect/Info:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -75,7 +75,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("UI/ColorRect/DayText:modulate")
+tracks/1/path = NodePath("UI/ColorRect/Info:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -120,26 +120,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="DayText" type="Control" parent="UI/ColorRect"]
+[node name="Info" type="Control" parent="UI/ColorRect"]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="DawnOf" type="Label" parent="UI/ColorRect/DayText"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 370.5
-offset_top = 148.0
-offset_right = 741.5
-offset_bottom = 272.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 90
-text = "Dawn of"
-
-[node name="Today" type="Label" parent="UI/ColorRect/DayText"]
+[node name="Name" type="Label" parent="UI/ColorRect/Info"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,9 +140,11 @@ offset_bottom = 386.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 120
-text = "The First Day"
+text = "Apartment
+"
+horizontal_alignment = 1
 
-[node name="DaysRemain" type="Label" parent="UI/ColorRect/DayText"]
+[node name="Message" type="Label" parent="UI/ColorRect/Info"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -169,7 +158,8 @@ offset_bottom = 445.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 60
-text = "-Six days remain-"
+text = "-go downstairs-"
+horizontal_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

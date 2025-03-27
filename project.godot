@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="frogventure"
-run/main_scene="res://World.tscn"
+run/main_scene="uid://ds8lc7x5wibyn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icons/projectIcon.png"
 
