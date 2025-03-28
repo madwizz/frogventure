@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgebkr13xxyp"]
+[gd_scene load_steps=13 format=3 uid="uid://dgebkr13xxyp"]
 
 [ext_resource type="Script" uid="uid://cthbuwa11gvja" path="res://Player.gd" id="1_1lh1s"]
 [ext_resource type="Texture2D" uid="uid://c3gjntumds13t" path="res://assets/icons/questionMark.png" id="3_s4lhw"]
@@ -11,6 +11,8 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u2jje"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya0hp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kne1u"]
 
 [sub_resource type="Animation" id="Animation_usw1v"]
 length = 0.001
@@ -135,6 +137,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionZone"]
 shape = SubResource("BoxShape3D_ya0hp")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="InteractionZone"]
+transform = Transform3D(0.09, 0, 0, 0, 0.1344, 0, 0, 0, 0.672, 0, 0.381666, -0.275626)
+mesh = SubResource("BoxMesh_kne1u")
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" type="PanelContainer" parent="UI"]
@@ -148,7 +154,9 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="UI/DialogBox"]
 layout_mode = 2
-text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+text = "\"Lorem"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
@@ -199,6 +207,19 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 60
 text = "-relax-"
 horizontal_alignment = 1
+
+[node name="Clue" type="CanvasLayer" parent="."]
+
+[node name="PressCue" type="Label" parent="Clue"]
+offset_left = 508.0
+offset_top = 514.0
+offset_right = 686.0
+offset_bottom = 537.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "PRESS 'E' TO  INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

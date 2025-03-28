@@ -14,6 +14,8 @@ extends CharacterBody3D
 @onready var dialogBox: PanelContainer = $UI/DialogBox
 @onready var label: Label = $UI/DialogBox/Label
 
+@onready var pressCue: Label = $Clue/PressCue
+
 @onready var info: Control = $UI/ColorRect/Info
 @onready var sceneName: Label = $UI/ColorRect/Info/SceneName
 @onready var task: Label = $UI/ColorRect/Info/Task
@@ -36,6 +38,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("endSession"):
 		get_tree().quit()
 	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
 	if !isFrozen:
 		var move_input = Input.get_action_strength("back") - Input.get_action_strength("forward")
 		var turn_input = Input.get_action_strength("left") - Input.get_action_strength("right")
@@ -57,12 +62,15 @@ func _updateIcons():
 	if isInInteractionZone:
 		exclamationIcon.visible = true
 		questionIcon.visible = false
+		pressCue.visible = true
 	elif isInWarningArea:
 		questionIcon.visible = true
 		exclamationIcon.visible = false
+		pressCue.visible = false
 	else:
 		questionIcon.visible = false
 		exclamationIcon.visible = false
+		pressCue.visible = false
 
 func _on_warning_interaction_area_area_entered(area):
 	if area.is_in_group("interactables"):

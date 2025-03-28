@@ -3,6 +3,7 @@ extends Node
 var player: CharacterBody3D = null
 
 var currentScenePath: String = ""
+var initialSpawn: bool = true
 
 func _ready():
 	$AudioStreamPlayer3D.stream.loop = true

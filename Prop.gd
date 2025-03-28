@@ -9,13 +9,21 @@ class_name Prop extends Interactable
 @export var nextSceneName: String
 @export var nextSceneMessage: String
 
+@export var initialSpawn: bool
+
 func interact(currentInteractable):
-	if hasText:
-		Game.player.dialogBox.visible = true
-		Game.player.ui.visible = !Game.player.ui.visible
-		Game.player.label.text = currentInteractable.message
-		Game.player.isFrozen = Game.player.ui.visible
-	
-	if isDoor and nextScenePath:
-		Game.player.dialogBox.visible = false
-		Transition.changeScene(nextScenePath, nextSceneName, nextSceneMessage)
+	if Game.player:
+		if hasText:
+			Game.player.dialogBox.visible = true
+			Game.player.ui.visible = !Game.player.ui.visible
+			Game.player.label.text = currentInteractable.message
+			Game.player.isFrozen = Game.player.ui.visible
+			Game.player.pressCue.visible = false
+			
+		if isDoor and nextScenePath:
+			Game.initialSpawn  = initialSpawn
+			Game.player.dialogBox.visible = false
+			Transition.changeScene(nextScenePath, nextSceneName, nextSceneMessage)
+		
+		if finishDay:
+			pass

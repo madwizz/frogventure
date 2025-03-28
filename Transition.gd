@@ -7,6 +7,20 @@ extends Node
 
 var isActive: bool = false
 
+#func _ready():
+	#print('the end')
+	#var currentScene = get_tree().current_scene
+	#if currentScene.scene_file_path == "res://Apartments.tscn" and Game.player.name == "Player2":
+		#_the_end_sequence()
+#
+#func _the_end_sequence():
+	#nameLabel.text = "THE END"
+	#messageLabel.text = "-party is under construction-"
+	#animPlayer.play("fadeIn")
+	#await animPlayer.animation_finished
+	#await get_tree().create_timer(3.0).timeout
+	#get_tree().quit()
+
 func changeScene(scenePath: String, sceneName: String, sceneMessage: String) -> void:
 	if isActive:
 		return
