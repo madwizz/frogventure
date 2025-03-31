@@ -12,3 +12,5 @@ func _ready():
 		if is_instance_valid(player1):
 			player1.queue_free()
 		Game.player = player2
+		if Game.player == player2:
+			Game.canFinish = true

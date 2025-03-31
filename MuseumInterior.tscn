@@ -715,7 +715,7 @@ shape = SubResource("ConvexPolygonShape3D_c7cy1")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 4, 8)
 
 [node name="WallTile25" type="MeshInstance3D" parent="Walls/WallGroup9"]
-transform = Transform3D(-1.24345e-14, 2.38419e-07, -1, -1, -4.37114e-08, 1.77742e-15, -4.37114e-08, 1, 2.38419e-07, 1, 1, 0)
+transform = Transform3D(-0.00602135, 2.38152e-07, -0.999982, -0.999982, -4.4883e-08, 0.00602135, -4.34482e-08, 1, 2.38418e-07, 1, 1, 0)
 mesh = SubResource("PlaneMesh_upo72")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ewrqf")
@@ -3013,110 +3013,54 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n4p8j")
 [node name="InteriorDoor" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-8.9407e-08, 1.70568e-06, -0.1, 4.37114e-08, -3.90214, -4.37113e-08, -1, -1.70568e-07, 7.45058e-09, -8.45104, 1, 16.9675)
 isDoor = true
-hasText = false
-finishDay = false
+museumDoor = true
 nextScenePath = "res://MuseumBusStop.tscn"
 nextSceneName = "Studentski Trg"
+nextSceneTime = "12:06"
 nextSceneMessage = "-thats been intense, hit home-"
-initialSpawn = false
 player = NodePath("../Player")
-isCharacter = false
 message = "Go Home?"
 
 [node name="Art1" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -12.451, 1, 12.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
+finishKeys = true
 message = "Art Piece"
 
 [node name="Art2" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -20.451, 1, 12.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art3" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -27.451, 1, 12.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art4" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -35.451, 1, 12.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art5" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -35.451, 1, 20.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art6" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -27.451, 1, 20.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art7" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -20.451, 1, 20.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
 message = "Art Piece"
 
 [node name="Art8" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -12.451, 1, 20.9675)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
+museumVisited = true
 message = "Art Piece"
 
 [node name="Camera15" type="Camera3D" parent="."]

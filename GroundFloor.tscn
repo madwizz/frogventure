@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://eypnfpfxa30i"]
+[gd_scene load_steps=63 format=3 uid="uid://eypnfpfxa30i"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_0u17q"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="1_lrjmk"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://21b0wn2m2emt" path="res://addons/kenney_prototype_textures/orange/stairs.png" id="6_mipmt"]
 [ext_resource type="Texture2D" uid="uid://sy1qvvva2eum" path="res://addons/kenney_prototype_textures/orange/door.png" id="7_v16rt"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="8_vmmil"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_gmnia"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ekklr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rsw4"]
 size = Vector3(1.19971, 1, 1)
@@ -189,8 +185,11 @@ player2 = NodePath("Player2")
 [node name="StairsGround" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -1, 1, -8)
 isDoor = true
+hasText = true
+finishDoor = true
 nextScenePath = "res://Floor5.tscn"
 nextSceneName = "5th Floor"
+nextSceneTime = "12:50"
 nextSceneMessage = "-go home-"
 player = NodePath("../Player")
 message = "to the floor 5"
@@ -198,29 +197,12 @@ message = "to the floor 5"
 [node name="Door2" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-8.74228e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74228e-09, -12.003, 1, -6.03246)
 hasText = true
-message = "THAT door. oh, funniest shit ever"
+message = "PLACEHOLDERq"
 
-[node name="Model2" type="MeshInstance3D" parent="Door2"]
-mesh = SubResource("BoxMesh_gmnia")
-
-[node name="InteractArea" type="Area3D" parent="Door2/Model2" groups=["interactables"]]
-
-[node name="CollisionShape" type="CollisionShape3D" parent="Door2/Model2/InteractArea"]
-shape = SubResource("BoxShape3D_ekklr")
-
-[node name="Model3" type="MeshInstance3D" parent="Door2"]
-mesh = SubResource("BoxMesh_gmnia")
-
-[node name="InteractArea" type="Area3D" parent="Door2/Model3" groups=["interactables"]]
-
-[node name="CollisionShape" type="CollisionShape3D" parent="Door2/Model3/InteractArea"]
-shape = SubResource("BoxShape3D_ekklr")
-
-[node name="Door6" parent="." node_paths=PackedStringArray("exitZone") instance=ExtResource("1_lrjmk")]
+[node name="Door6" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -10.003, 1, -8.03246)
 hasText = true
-exitZone = NodePath("../StairsGround/ExitZone")
-message = "A mother and a daughter live there. And a dog, name's Kiki."
+message = "WHAT ARE YOU LOOKING AT HUH"
 
 [node name="Door3" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, 5.99702, 1, -4.03246)
@@ -232,6 +214,7 @@ transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3
 isDoor = true
 nextScenePath = "res://Entrance.tscn"
 nextSceneName = "Cvetanova Cuprija"
+nextSceneTime = "09:03"
 nextSceneMessage = "-check the bus stop-"
 initialSpawn = true
 player = NodePath("../Player")
@@ -240,12 +223,12 @@ message = "To the entrance"
 [node name="Door4" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, 5.99702, 1, -8.03246)
 hasText = true
-message = "A family of three lives here, dont have much to say really."
+message = "Another office?"
 
 [node name="Door5" parent="." instance=ExtResource("1_lrjmk")]
 transform = Transform3D(-2.4869e-14, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -4.44089e-16, 7.99702, 1, -6.03246)
 hasText = true
-message = "Out neighbour Silvana lives here. Nice lady, she gave me a lift once, after that i've felt very confident in my Serbian. Good to have her next door."
+message = "Dr S Dentist Office, no fr, its called Dr S like Ass het it?"
 
 [node name="Camera5" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.878355, 1.37699, -1.05619)

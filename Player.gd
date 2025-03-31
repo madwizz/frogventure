@@ -18,6 +18,7 @@ extends CharacterBody3D
 
 @onready var info: Control = $UI/ColorRect/Info
 @onready var sceneName: Label = $UI/ColorRect/Info/SceneName
+@onready var sceneTime: Label = $UI/ColorRect/Info/Time
 @onready var task: Label = $UI/ColorRect/Info/Task
 
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer

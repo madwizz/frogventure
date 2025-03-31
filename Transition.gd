@@ -3,6 +3,7 @@ extends Node
 @onready var animPlayer: AnimationPlayer = $AnimationPlayer
 
 @onready var nameLabel: Label = $UI/ColorRect/Info/Name
+@onready var timeLabel: Label = $UI/ColorRect/Info/Time
 @onready var messageLabel: Label = $UI/ColorRect/Info/Message
 
 var isActive: bool = false
@@ -21,12 +22,19 @@ var isActive: bool = false
 	#await get_tree().create_timer(3.0).timeout
 	#get_tree().quit()
 
-func changeScene(scenePath: String, sceneName: String, sceneMessage: String) -> void:
+func changeScene(
+	scenePath: String, 
+	sceneName: String, 
+	sceneTime: String, 
+	sceneMessage: String
+	) -> void:
+		
 	if isActive:
 		return
 	isActive = true
 	
 	nameLabel.text = sceneName
+	timeLabel.text = sceneTime
 	messageLabel.text = sceneMessage
 	
 	animPlayer.play("fadeIn")

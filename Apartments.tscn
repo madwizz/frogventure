@@ -746,8 +746,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
 [node name="Door2Floor" parent="Hall" node_paths=PackedStringArray("player") instance=ExtResource("5_lha0y")]
 transform = Transform3D(1, 1.70568e-07, 4.37112e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37112e-08, -1.36454e-06, 0.1, -2.003, 1, -4.03246)
 isDoor = true
+keysDoor = true
 nextScenePath = "res://Floor5.tscn"
 nextSceneName = "5th Floor"
+nextSceneTime = "09:01"
 nextSceneMessage = "-go to downstairs-"
 initialSpawn = true
 player = NodePath("../../Player")
@@ -799,6 +801,12 @@ environment = SubResource("Environment_ixlry")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
+[node name="Keys" parent="." instance=ExtResource("5_lha0y")]
+transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, -0.0644073, 1, -3.46537)
+hasText = true
+keys = true
+message = "Keys"
+
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera2/CameraArea1" to="Camera2/CameraArea1" method="enterTrigger"]
@@ -808,3 +816,4 @@ shadow_enabled = true
 
 [editable path="Bedroom/Bed"]
 [editable path="Hall/Door2Floor"]
+[editable path="Keys"]

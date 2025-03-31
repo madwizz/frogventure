@@ -5,7 +5,13 @@ var player: CharacterBody3D = null
 var currentScenePath: String = ""
 var initialSpawn: bool = true
 
-func _ready():
+var hasKeys = false
+var hasCoffee = false
+var hasBooks = false
+var museumVisited = false
+var canFinish = false
+
+func _ready():	
 	$AudioStreamPlayer3D.stream.loop = true
 	$AudioStreamPlayer3D.play()
 

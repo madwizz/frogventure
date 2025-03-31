@@ -361,7 +361,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4no61")
 shape = SubResource("ConvexPolygonShape3D_2mu8i")
 
 [node name="CafeInteriorCamera3" type="Camera3D" parent="."]
-transform = Transform3D(0.997836, 0, 0.0657516, 0, 1, 0, -0.0657516, 0, 0.997836, 17.894, 1.1747, 24.9185)
+transform = Transform3D(0.997836, 0, 0.0657516, 0, 1, 0, -0.0657516, 0, 0.997836, 17.894, 1.1747, 26.6217)
 
 [node name="CameraArea1" type="Area3D" parent="CafeInteriorCamera3"]
 transform = Transform3D(5.30407, 0, 4.4856, 0, 5.1, 0, -4.74305, 0, 5.01616, 0.513487, 0, -5.45048)
@@ -372,7 +372,7 @@ transform = Transform3D(0.30812, 0, -0.972371, 0, 0.569735, 0, 0.30812, 0, 0.972
 shape = SubResource("BoxShape3D_h87hw")
 
 [node name="CafeInteriorCamera4" type="Camera3D" parent="."]
-transform = Transform3D(0.659083, 0, 0.75207, 0, 1, 0, -0.75207, 0, 0.659083, 23.5815, 1.19389, 25.1355)
+transform = Transform3D(0.659083, 0, 0.75207, 0, 1, 0, -0.75207, 0, 0.659083, 23.6843, 1.19389, 25.0736)
 
 [node name="CameraArea1" type="Area3D" parent="CafeInteriorCamera4"]
 transform = Transform3D(5.30407, 0, 4.4856, 0, 3.672, 0, -4.74305, 0, 5.01616, 0.0485392, 0, 1.6053)
@@ -564,13 +564,12 @@ shape = SubResource("ConvexPolygonShape3D_b8lxx")
 transform = Transform3D(1, 1.70568e-07, 4.37112e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37112e-08, -1.36454e-06, 0.1, 18.997, 1, 18.0541)
 isDoor = true
 hasText = true
-finishDay = false
+coffeeDoor = true
 nextScenePath = "res://CafeOutside.tscn"
 nextSceneName = "Cafe Street"
+nextSceneTime = "9:40"
 nextSceneMessage = "-go to the book store-"
-initialSpawn = false
 player = NodePath("../Player")
-isCharacter = false
 message = "To the cafe"
 
 [node name="Model" parent="CafeDoor" index="0"]
@@ -581,14 +580,8 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 
 [node name="CafeDoor2" parent="." instance=ExtResource("4_axjrb")]
 transform = Transform3D(-1.91847e-13, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -1.95399e-14, 20.7623, 1, 21.0541)
-isDoor = false
 hasText = true
-finishDay = false
-nextScenePath = ""
-nextSceneName = ""
-nextSceneMessage = ""
-initialSpawn = false
-isCharacter = false
+coffee = true
 message = "Cao! Zta zelis?"
 
 [node name="Model" parent="CafeDoor2" index="0"]
