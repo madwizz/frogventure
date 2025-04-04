@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://bbiqpd7pqhyal"]
+[gd_scene load_steps=120 format=3 uid="uid://bbiqpd7pqhyal"]
 
 [ext_resource type="Texture2D" uid="uid://b4w300ovhwnv8" path="res://addons/kenney_prototype_textures/orange/wall.png" id="1_1jjsj"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_iut70"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="3_iut70"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="4_j0om3"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_hwjw1"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_j0om3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_upo72"]
 
@@ -2423,6 +2424,34 @@ nextSceneMessage = "-observe-"
 initialSpawn = true
 player = NodePath("../../Player")
 
+[node name="Sasha" parent="." instance=ExtResource("7_j0om3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.82365, 1, 0.821919)
+charId = "Sasha"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Lesya" parent="." instance=ExtResource("7_j0om3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82365, 1, 0.821919)
+charId = "Lesya"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Nastya Lexa" parent="." instance=ExtResource("7_j0om3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17635, 1, 14.8219)
+charId = "Nastya Lexa"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Hel" parent="." instance=ExtResource("7_j0om3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8237, 1, 6.82192)
+charId = "Hel"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera11/CameraArea1" to="Camera11/CameraArea1" method="enterTrigger"]
@@ -2436,3 +2465,7 @@ player = NodePath("../../Player")
 
 [editable path="Door9"]
 [editable path="Entrance/EntranceDoor"]
+[editable path="Sasha"]
+[editable path="Lesya"]
+[editable path="Nastya Lexa"]
+[editable path="Hel"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://dombqdayqvxai"]
+[gd_scene load_steps=160 format=3 uid="uid://dombqdayqvxai"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_0v4eb"]
 [ext_resource type="Texture2D" uid="uid://b4w300ovhwnv8" path="res://addons/kenney_prototype_textures/orange/wall.png" id="1_ncoxp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="3_0v4eb"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="4_nmg8o"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_0i0tc"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_nmg8o"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_upo72"]
 
@@ -3108,6 +3109,20 @@ environment = SubResource("Environment_nmg8o")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, -30, 14, 14)
 shadow_enabled = true
 
+[node name="Anya Koroleva" parent="." instance=ExtResource("7_nmg8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.6565, 1, 14.3539)
+charId = "Anya Koroleva"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Anya Haustova" parent="." instance=ExtResource("7_nmg8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.607, 1, 19.2413)
+charId = "Anya Haustova"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="Camera15/CameraArea1" to="Camera15/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera15/CameraArea1" to="Camera15/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera16/CameraArea1" to="Camera16/CameraArea1" method="enterTrigger"]
@@ -3126,3 +3141,5 @@ shadow_enabled = true
 [editable path="Art6"]
 [editable path="Art7"]
 [editable path="Art8"]
+[editable path="Anya Koroleva"]
+[editable path="Anya Haustova"]

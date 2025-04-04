@@ -1,10 +1,11 @@
-[gd_scene load_steps=130 format=3 uid="uid://bxogrvxcmo63y"]
+[gd_scene load_steps=131 format=3 uid="uid://bxogrvxcmo63y"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_sfe08"]
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="2_t2ugw"]
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="3_t2ugw"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="4_diijv"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_fjnki"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="6_klbtq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sfe08"]
 
@@ -3564,6 +3565,20 @@ environment = SubResource("Environment_5342k")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
+[node name="Anya Syrovatskaya" parent="." instance=ExtResource("6_klbtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8237, 1, 0.669731)
+charId = "Anya Syrovatskaya"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Stolik2" parent="." instance=ExtResource("6_klbtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8237, 1, 0.669731)
+charId = "Artyom"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="Camera11/CameraArea1" to="Camera11/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera11/CameraArea1" to="Camera11/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera12/CameraArea1" to="Camera12/CameraArea1" method="enterTrigger"]
@@ -3586,3 +3601,5 @@ shadow_enabled = true
 [editable path="BookShelf4"]
 [editable path="BookShelf5"]
 [editable path="BookShelf6"]
+[editable path="Anya Syrovatskaya"]
+[editable path="Stolik2"]

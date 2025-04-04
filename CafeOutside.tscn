@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dgir3likowdob"]
+[gd_scene load_steps=66 format=3 uid="uid://dgir3likowdob"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_ppefo"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_ryrrj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhd0u2o78dsh7" path="res://Door.tscn" id="3_2fcy6"]
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="4_nyk16"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="5_j6ct1"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_nk2aw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h87hw"]
 
@@ -1144,6 +1145,27 @@ environment = SubResource("Environment_ryrrj")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
+[node name="Dima" parent="." instance=ExtResource("7_nk2aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, 6)
+charId = "Dima"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Nastya Semen" parent="." instance=ExtResource("7_nk2aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 17)
+charId = "Nastya Semen"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Tori" parent="." instance=ExtResource("7_nk2aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 5)
+charId = "Tori"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="BusStop/CafeBusStopCamera/CameraArea1" to="BusStop/CafeBusStopCamera/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Alley/CafeAlleyCamera/CameraArea1" to="Alley/CafeAlleyCamera/CameraArea1" method="enterTrigger"]
@@ -1155,3 +1177,6 @@ shadow_enabled = true
 
 [editable path="BusStop/CafeBusStop"]
 [editable path="Entrance/Door2Cafe"]
+[editable path="Dima"]
+[editable path="Nastya Semen"]
+[editable path="Tori"]

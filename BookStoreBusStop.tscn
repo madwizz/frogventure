@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cuh4kuy4sxye8"]
+[gd_scene load_steps=51 format=3 uid="uid://cuh4kuy4sxye8"]
 
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_3uufb"]
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_ihgxq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ym4vjiitfyb6" path="res://addons/kenney_prototype_textures/orange/texture_07.png" id="3_3chmu"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="4_aopcv"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="5_8uu2w"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="7_dv71b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dpdcy"]
 
@@ -895,6 +896,27 @@ environment = SubResource("Environment_ihgxq")
 transform = Transform3D(0.943662, -0.161876, 0.288613, 0, 0.87218, 0.489185, -0.33091, -0.461625, 0.823044, 0, 4, 0)
 shadow_enabled = true
 
+[node name="Manas" parent="." instance=ExtResource("7_dv71b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82365, 1, 0.669731)
+charId = "Manas"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Semen" parent="." instance=ExtResource("7_dv71b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8237, 1, 7.66973)
+charId = "Semen"
+hasText = true
+isCharacter = true
+message = "test"
+
+[node name="Stolik" parent="." instance=ExtResource("7_dv71b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8237, 1, 5.66973)
+charId = "Stolik"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="Camera12/CameraArea1" to="Camera12/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera12/CameraArea1" to="Camera12/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera13/CameraArea1" to="Camera13/CameraArea1" method="enterTrigger"]
@@ -902,3 +924,6 @@ shadow_enabled = true
 
 [editable path="Door9"]
 [editable path="BookStoreEntrance/BookStoreDoor"]
+[editable path="Manas"]
+[editable path="Semen"]
+[editable path="Stolik"]

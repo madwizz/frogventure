@@ -30,6 +30,14 @@ class_name Prop extends Interactable
 
 @export var initialSpawn: bool
 
+#func _ready():
+	#if Game.player:
+		#var shouldBeVisible = (
+			#(isVisibleForPlayer2 and Game.player.name == "Player2") or
+			#(!isVisibleForPlayer2 and Game.player.name == "Player1")
+		#)
+		#self.visible = shouldBeVisible
+
 func showKeyClue(message: String) -> void:
 	Game.player.ui.visible = true
 	Game.player.dialogBox.visible = true

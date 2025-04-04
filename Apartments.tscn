@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ds8lc7x5wibyn"]
+[gd_scene load_steps=54 format=3 uid="uid://ds8lc7x5wibyn"]
 
 [ext_resource type="Script" uid="uid://2bk2ygphkd2f" path="res://Level.gd" id="1_7r7a3"]
 [ext_resource type="Texture2D" uid="uid://j15hv1oyi0mi" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_38a4v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cb6cclxaie4dj" path="res://Interactable.gd" id="6_gqrfj"]
 [ext_resource type="PackedScene" uid="uid://dgebkr13xxyp" path="res://Player.tscn" id="6_u26aq"]
 [ext_resource type="Script" uid="uid://6dodax6ltd41" path="res://CameraTrigger.gd" id="7_jbiuj"]
+[ext_resource type="PackedScene" uid="uid://ci84nq85ndbrd" path="res://Cylinder.tscn" id="10_ixlry"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiu1g"]
 
@@ -803,6 +804,13 @@ transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, 
 hasText = true
 keys = true
 
+[node name="Mitya" parent="." instance=ExtResource("10_ixlry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17635, 1, 2.66973)
+charId = "Mitya"
+hasText = true
+isCharacter = true
+message = "test"
+
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]
 [connection signal="body_entered" from="Camera2/CameraArea1" to="Camera2/CameraArea1" method="enterTrigger"]
@@ -813,3 +821,4 @@ keys = true
 [editable path="Bedroom/Bed"]
 [editable path="Hall/Door2Floor"]
 [editable path="Keys"]
+[editable path="Mitya"]
