@@ -262,7 +262,6 @@ nextSceneName = "Museum Park"
 nextSceneTime = "11:02"
 nextSceneMessage = "-lets see some artsy farcy-"
 initialSpawn = true
-message = "Go to the cafe?"
 
 [node name="BookStoreEntrance" type="Node3D" parent="."]
 
@@ -854,7 +853,6 @@ nextSceneTime = "10:02"
 nextSceneMessage = "-collect the books-"
 initialSpawn = true
 player = NodePath("../../Player")
-message = "To the cafe"
 
 [node name="Model" parent="BookStoreEntrance/BookStoreDoor" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)

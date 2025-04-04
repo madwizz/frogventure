@@ -7,7 +7,6 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ncwb3"]
 
 [node name="Cylinder" instance=ExtResource("1_gtnml")]
-message = "this is a cylinder"
 
 [node name="Model" parent="." index="0"]
 mesh = SubResource("CylinderMesh_lgtsh")

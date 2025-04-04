@@ -987,13 +987,28 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
 
 [node name="Door2GroundFloor" parent="EntranceDoor" node_paths=PackedStringArray("player") instance=ExtResource("3_j8v0v")]
 transform = Transform3D(1, 1.70568e-07, 4.37112e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37112e-08, -1.36454e-06, 0.1, 21.997, 1, 8.96754)
+characterId = ""
 isDoor = true
+hasText = false
+finishDay = false
+keysDoor = false
+keys = false
 finishDoor = true
+finishKeys = false
+coffeeDoor = false
+coffee = false
+bookDoor = false
+books = false
+museumDoor = false
+museumVisited = false
 nextScenePath = "res://GroundFloor.tscn"
 nextSceneName = "Ground Floor"
 nextSceneTime = "12:42"
 nextSceneMessage = "-check postbox-"
+initialSpawn = false
 player = NodePath("../../Player")
+isCharacter = false
+message = ""
 
 [node name="DoorTile14" type="MeshInstance3D" parent="EntranceDoor"]
 transform = Transform3D(1, -2.13163e-14, 4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 2.13163e-14, 1, 1.91069e-15, 22.007, 0.994796, 8.99758)
@@ -1651,13 +1666,28 @@ shape = SubResource("BoxShape3D_5rsw4")
 
 [node name="Door9" parent="BusStop" node_paths=PackedStringArray("player") instance=ExtResource("3_j8v0v")]
 transform = Transform3D(4.37114e-08, -3.90214, -3.93402e-08, -8.74228e-08, -1.53511e-06, 0.1, -1, -1.70568e-07, -8.74228e-09, 46.997, 1, 32.9675)
+characterId = ""
 isDoor = true
+hasText = false
+finishDay = false
+keysDoor = false
+keys = false
+finishDoor = false
+finishKeys = false
+coffeeDoor = false
+coffee = false
+bookDoor = false
+books = false
+museumDoor = false
+museumVisited = false
 nextScenePath = "res://CafeOutside.tscn"
 nextSceneName = "Cafe Street"
 nextSceneTime = "9:30"
 nextSceneMessage = "-go to drink some coffee-"
 initialSpawn = true
 player = NodePath("../../Player")
+isCharacter = false
+message = ""
 
 [node name="Player" parent="." instance=ExtResource("6_cxqx6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 10)
@@ -1674,22 +1704,25 @@ shadow_enabled = true
 
 [node name="Vasya" parent="." instance=ExtResource("8_b3hrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 12)
-charId = "Vasya"
+characterId = ""
+isDoor = false
 hasText = true
-isCharacter = true
-message = "test"
-
-[node name="Kostya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 31)
-charId = "Kostya"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="Polya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 29)
-charId = "Polya"
-hasText = true
+finishDay = false
+keysDoor = false
+keys = false
+finishDoor = false
+finishKeys = false
+coffeeDoor = false
+coffee = false
+bookDoor = false
+books = false
+museumDoor = false
+museumVisited = false
+nextScenePath = ""
+nextSceneName = ""
+nextSceneTime = ""
+nextSceneMessage = ""
+initialSpawn = false
 isCharacter = true
 message = "test"
 
@@ -1705,5 +1738,3 @@ message = "test"
 [editable path="EntranceDoor/Door2GroundFloor"]
 [editable path="BusStop/Door9"]
 [editable path="Vasya"]
-[editable path="Kostya"]
-[editable path="Polya"]

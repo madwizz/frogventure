@@ -3019,49 +3019,40 @@ nextSceneName = "Studentski Trg"
 nextSceneTime = "12:06"
 nextSceneMessage = "-thats been intense, hit home-"
 player = NodePath("../Player")
-message = "Go Home?"
 
 [node name="Art1" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -12.451, 1, 12.9675)
 hasText = true
 finishKeys = true
-message = "Art Piece"
 
 [node name="Art2" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -20.451, 1, 12.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art3" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -27.451, 1, 12.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art4" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(-1, -1.70568e-07, 7.45058e-09, 4.37114e-08, -3.90214, -4.37113e-08, 1.04308e-07, -1.70568e-06, 0.1, -35.451, 1, 12.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art5" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -35.451, 1, 20.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art6" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -27.451, 1, 20.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art7" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -20.451, 1, 20.9675)
 hasText = true
-message = "Art Piece"
 
 [node name="Art8" parent="." instance=ExtResource("3_0v4eb")]
 transform = Transform3D(1, 1.70568e-07, -1.61929e-08, 4.37114e-08, -3.90214, -4.37113e-08, -1.91731e-07, 1.70568e-06, -0.1, -12.451, 1, 20.9675)
 hasText = true
 museumVisited = true
-message = "Art Piece"
 
 [node name="Camera15" type="Camera3D" parent="."]
 transform = Transform3D(-0.0794987, -0.5, 0.862369, -0.0458987, 0.866025, 0.497889, -0.995778, -1.00573e-07, -0.0917972, -8.1653, 5.37699, 15.8252)

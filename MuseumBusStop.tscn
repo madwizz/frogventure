@@ -1633,7 +1633,6 @@ nextSceneName = "Bus stop at home"
 nextSceneTime = "12:40"
 nextSceneMessage = "-been a long day, head home-"
 player = NodePath("../Player")
-message = "Go Home?"
 
 [node name="Player" parent="." instance=ExtResource("5_hwjw1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33, 0, 4)
@@ -2423,7 +2422,6 @@ nextSceneTime = "11:08"
 nextSceneMessage = "-observe-"
 initialSpawn = true
 player = NodePath("../../Player")
-message = "Go Home?"
 
 [connection signal="body_entered" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera10/CameraArea1" to="Camera10/CameraArea1" method="exitTrigger"]

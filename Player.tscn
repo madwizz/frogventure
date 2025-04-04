@@ -152,6 +152,11 @@ offset_top = -198.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="LabelName" type="Label" parent="UI/DialogBox"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "UserName"
+
 [node name="Label" type="Label" parent="UI/DialogBox"]
 layout_mode = 2
 text = "\"Lorem"

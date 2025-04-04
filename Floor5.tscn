@@ -160,32 +160,26 @@ nextSceneTime = "09:02"
 nextSceneMessage = "-go touch grass-"
 initialSpawn = true
 player = NodePath("../Player")
-message = "to the ground floor"
 
 [node name="Door2" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-8.74228e-08, -1.36454e-06, 0.1, -4.37114e-08, 3.90214, 3.49691e-08, -1, -1.70568e-07, -8.74228e-09, -12.003, 1, -6.03246)
 hasText = true
-message = "THAT door. oh, funniest shit ever"
 
 [node name="Door6" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, -10.003, 1, -8.03246)
 hasText = true
-message = "A mother and a daughter live there. And a dog, name's Kiki."
 
 [node name="Door3" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-1, -1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, 1.36454e-06, -0.1, 5.99702, 1, -4.03246)
 hasText = true
-message = "The elevator is not operational. Better use stairs."
 
 [node name="Door4" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(1, 1.70568e-07, 4.37114e-09, -4.37114e-08, 3.90214, 3.49691e-08, -4.37114e-08, -1.36454e-06, 0.1, 5.99702, 1, -8.03246)
 hasText = true
-message = "A family of three lives here, dont have much to say really."
 
 [node name="Door5" parent="." instance=ExtResource("4_27spy")]
 transform = Transform3D(-2.4869e-14, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -4.44089e-16, 7.99702, 1, -6.03246)
 hasText = true
-message = "Out neighbour Silvana lives here. Nice lady, she gave me a lift once, after that i've felt very confident in my Serbian. Good to have her next door."
 
 [node name="Walls&Floors" type="Node3D" parent="."]
 
@@ -664,7 +658,6 @@ shape = SubResource("ConvexPolygonShape3D_gqnyt")
 [node name="Interactable2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.16822, 0, -3.51072)
 script = ExtResource("7_qjsvv")
-message = "The Elevator is not working. Better use stairs."
 
 [node name="Camera4" type="Camera3D" parent="."]
 transform = Transform3D(0.583154, -0.437266, 0.684639, 0.0264361, 0.852544, 0.521986, -0.811932, -0.286299, 0.508724, 0.182645, 2.63526, -4.49783)
@@ -697,7 +690,6 @@ nextSceneName = "Home"
 nextSceneTime = "12:51"
 nextSceneMessage = "-sweet hole-"
 player = NodePath("../Player")
-message = "To the apartment"
 
 [node name="Player" parent="." instance=ExtResource("9_mgcoj")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -2, 0, -5)

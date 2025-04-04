@@ -1674,21 +1674,6 @@ shadow_enabled = true
 
 [node name="Vasya" parent="." instance=ExtResource("8_b3hrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 12)
-charId = "Vasya"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="Kostya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 31)
-charId = "Kostya"
-hasText = true
-isCharacter = true
-message = "test"
-
-[node name="Polya" parent="." instance=ExtResource("8_b3hrg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, 1, 29)
-charId = "Polya"
 hasText = true
 isCharacter = true
 message = "test"
@@ -1705,5 +1690,3 @@ message = "test"
 [editable path="EntranceDoor/Door2GroundFloor"]
 [editable path="BusStop/Door9"]
 [editable path="Vasya"]
-[editable path="Kostya"]
-[editable path="Polya"]

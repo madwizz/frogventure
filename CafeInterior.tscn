@@ -570,7 +570,6 @@ nextSceneName = "Cafe Street"
 nextSceneTime = "9:40"
 nextSceneMessage = "-go to the book store-"
 player = NodePath("../Player")
-message = "To the cafe"
 
 [node name="Model" parent="CafeDoor" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -582,7 +581,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(-1.91847e-13, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -1.95399e-14, 20.7623, 1, 21.0541)
 hasText = true
 coffee = true
-message = "Cao! Zta zelis?"
 
 [node name="Model" parent="CafeDoor2" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)

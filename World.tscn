@@ -171,27 +171,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 18)
 hasText = true
 player = NodePath("../Player")
 isCharacter = true
-message = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
 
 [node name="Character2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 22)
 hasText = true
 player = NodePath("../Player")
 isCharacter = true
-message = "Cao zdravo"
 
 [node name="Character3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_nnitm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 22)
 hasText = true
 player = NodePath("../Player")
 isCharacter = true
-message = "Ей, привет"
 
 [node name="Box" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_vls01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 14)
 finishDay = true
 player = NodePath("../Player")
-message = ""
 
 [node name="Door" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(0, 0, 0.1, 0, 3.90214, 0, -1, 0, -3.72529e-09, 0, 0, 15)
@@ -203,7 +199,6 @@ player = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 3.90214, 0, 0, 0, 0.1, -1, 0, 0)
 hasText = true
 player = NodePath("../Player")
-message = "Shit's locked"
 
 [node name="Door2" parent="." node_paths=PackedStringArray("exitZone", "player") instance=ExtResource("9_mr2b0")]
 transform = Transform3D(-4.37114e-08, 0, 0.1, 0, 3.90214, 0, -1, 0, -4.37114e-09, 0, 0, 10)

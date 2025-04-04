@@ -3412,7 +3412,6 @@ nextSceneName = "BookStore Street"
 nextSceneTime = "10:31"
 nextSceneMessage = "-go to the museum-"
 player = NodePath("../Player")
-message = "To the cafe"
 
 [node name="Model" parent="BookStoreDoor" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3423,7 +3422,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 [node name="BookShelf" parent="." instance=ExtResource("3_t2ugw")]
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 24.1391, 1, 0.28326)
 hasText = true
-message = "Books"
 
 [node name="Model" parent="BookShelf" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3434,7 +3432,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 [node name="BookShelf2" parent="." instance=ExtResource("3_t2ugw")]
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 30.1391, 1, 0.28326)
 hasText = true
-message = "Books"
 
 [node name="Model" parent="BookShelf2" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3445,7 +3442,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 [node name="BookShelf3" parent="." instance=ExtResource("3_t2ugw")]
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 36.1391, 1, 0.28326)
 hasText = true
-message = "Books"
 
 [node name="Model" parent="BookShelf3" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3456,7 +3452,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 [node name="BookShelf4" parent="." instance=ExtResource("3_t2ugw")]
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 40.1391, 1, 0.28326)
 hasText = true
-message = "Books"
 
 [node name="Model" parent="BookShelf4" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3467,7 +3462,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 [node name="BookShelf5" parent="." instance=ExtResource("3_t2ugw")]
 transform = Transform3D(1, 1.70568e-07, -1.31134e-08, -4.37114e-08, 3.90214, 3.49691e-08, 1.31134e-07, -1.36454e-06, 0.1, 44.1391, 1, 0.28326)
 hasText = true
-message = "Books"
 
 [node name="Model" parent="BookShelf5" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)
@@ -3479,7 +3473,6 @@ transform = Transform3D(1.1, 1.27099e-15, -7.10543e-15, -1.31986e-16, 0.2, 1.421
 transform = Transform3D(-1.74846e-07, 1.36454e-06, -0.1, -4.37114e-08, 3.90214, 3.49691e-08, 1, 1.70568e-07, -1.74846e-08, 45.1391, 1, 6.28326)
 hasText = true
 books = true
-message = "Здраствуйте, вот ваш заказ, спасибо"
 
 [node name="Model" parent="BookShelf6" index="0"]
 transform = Transform3D(1, -1.14086e-14, -1.33227e-15, 3.64473e-16, 1, 0, 8.52651e-14, 0, 1, -1.3847, 2.98023e-08, 0)

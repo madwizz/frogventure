@@ -19,6 +19,7 @@ config/icon="res://assets/icons/projectIcon.png"
 
 Transition="*res://Transition.tscn"
 Game="*res://Game.tscn"
+Dialogs="*res://Dialogs.gd"
 
 [editor_plugins]
 

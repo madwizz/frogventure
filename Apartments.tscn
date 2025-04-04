@@ -244,7 +244,6 @@ shape = SubResource("ConvexPolygonShape3D_n3hxh")
 [node name="Bed" parent="Bedroom" instance=ExtResource("5_lha0y")]
 transform = Transform3D(4.37114e-08, -3.90214, -3.93402e-08, -8.74228e-08, -1.53511e-06, 0.1, -1, -1.70568e-07, -8.74228e-09, 1.99702, 1, 4.96754)
 hasText = true
-message = "As much as i would love to sleep all day, considering THE day, but i need to run some errands arount town."
 
 [node name="Walls" type="Node3D" parent="Bedroom"]
 
@@ -729,7 +728,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_u3k5v")
 [node name="Keys" type="Node3D" parent="Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
 script = ExtResource("6_gqrfj")
-message = "Keys"
 
 [node name="FloorTile19" type="MeshInstance3D" parent="Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
@@ -753,7 +751,6 @@ nextSceneTime = "09:01"
 nextSceneMessage = "-go to downstairs-"
 initialSpawn = true
 player = NodePath("../../Player")
-message = "To the floor"
 
 [node name="Camera1" type="Camera3D" parent="."]
 transform = Transform3D(-0.819152, -0.153282, 0.552715, 0, 0.96363, 0.267239, -0.573576, 0.218909, -0.78936, 3.75369, 1.96096, 0.107148)
@@ -805,7 +802,6 @@ shadow_enabled = true
 transform = Transform3D(7.15256e-08, 2.55852e-07, -0.1, 2.62268e-08, -0.585321, -4.37113e-08, -0.6, -2.55852e-08, -1.11759e-08, -0.0644073, 1, -3.46537)
 hasText = true
 keys = true
-message = "Keys"
 
 [connection signal="body_entered" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="enterTrigger"]
 [connection signal="body_exited" from="Camera1/CameraArea1" to="Camera1/CameraArea1" method="exitTrigger"]

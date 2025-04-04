@@ -1,5 +1,8 @@
 class_name Prop extends Interactable
 
+@export var charId: String = ""
+@export_enum("first", "second") var lineKey: String = "first"
+
 @export var isDoor: bool
 @export var hasText: bool
 @export var finishDay: bool
@@ -45,7 +48,14 @@ func interact(currentInteractable):
 	if hasText:
 		Game.player.dialogBox.visible = true
 		Game.player.ui.visible = !Game.player.ui.visible
-		Game.player.label.text = currentInteractable.message
+		
+		if charId != "":
+			var line = Dialogs.getLine(charId, lineKey)
+			Game.player.label.text = line
+			Game.player.labelName.text = charId
+		else:
+			Game.player.label.text = currentInteractable.message
+		
 		Game.player.isFrozen = Game.player.ui.visible
 		Game.player.pressCue.visible = false
 		

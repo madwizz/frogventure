@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var colorRect: ColorRect = $UI/ColorRect
 @onready var dialogBox: PanelContainer = $UI/DialogBox
 @onready var label: Label = $UI/DialogBox/Label
+@onready var labelName: Label = $UI/DialogBox/LabelName
 
 @onready var pressCue: Label = $Clue/PressCue
 
